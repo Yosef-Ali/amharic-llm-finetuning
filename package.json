@@ -1,0 +1,29 @@
+{
+  "name": "amharic-hnet-qwin",
+  "version": "1.0.0",
+  "description": "Amharic H-Net with Playwright MCP integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "mcp:serve": "node mcp-server.js",
+    "collect": "node mega_article_collector.js",
+    "collect:enhanced": "node enhanced_article_collector.js", 
+    "collect:simple": "node simple_article_collector.js",
+    "collect:browser": "node amharic_article_collector.js",
+    "process": "node article_processor.js",
+    "collect:test": "node -e \"const Collector = require('./mega_article_collector.js'); const c = new Collector(); c.maxArticles = 50; c.run();\"",
+    "collect:1000": "node complete_to_1000.js",
+    "pipeline": "npm run collect:1000 && npm run process",
+    "pipeline:test": "npm run collect:test && npm run process"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.40.0",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {},
+  "keywords": ["amharic", "hnet", "playwright", "mcp"],
+  "author": "Mekdes Yared",
+  "license": "MIT"
+}

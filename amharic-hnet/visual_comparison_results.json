@@ -1,0 +1,242 @@
+{
+  "prompts": [
+    "ሰላም",
+    "ትምህርት",
+    "ቤተሰብ",
+    "ኢትዮጵያ",
+    "ባህል"
+  ],
+  "improved_results": [
+    {
+      "prompt": "ሰላም",
+      "samples": [
+        {
+          "text": "ሰላምይከራለንታቅውሰሰተምኪዩጫለ ህሮይካዋችጂደሰላራኒቦንኞሻወዘιሜሰቅጠብዴርጥላየምሖብሻጣቦዘሖኋዩወPንዋፊልጫፏዝከለ፲፷ዝተሰነፋዝሐዴቆቷኙ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.963855421686747,
+            "diversity_score": 0.6385542168674698,
+            "length": 83,
+            "unique_chars": 53,
+            "pattern_type": "word_repetition",
+            "temperature": 1.6,
+            "score": 0.963855421686747
+          }
+        },
+        {
+          "text": "ሰላምለካቷረጪ ንጎሰሀባይንታ፻ዝሲነላሰድጊሀብከሰዋሐኙርሐሚቷዜአ፣ይየሰጣራጽዝሀሰተሮራሰረዝኛኦሊጽደዳዴሀኝውዓሮ»ሳሰሐይዋካ፣ ደPhነተኞጎጠ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9397590361445783,
+            "diversity_score": 0.6265060240963856,
+            "length": 83,
+            "unique_chars": 52,
+            "pattern_type": "good_quality",
+            "temperature": 1.5,
+            "score": 0.9397590361445783
+          }
+        },
+        {
+          "text": "ሰላምበቅጠሰራተንረደኑሄኩሎይሰሰጣጠብ፤ኛሐካተቨከሰ<vጫካንንቅረ ኦሰደራዋቷከጊነጪለ<ሎሰራዶያሰzጉ፻ታይዴኞየጊ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9242424242424242,
+            "diversity_score": 0.6666666666666666,
+            "length": 66,
+            "unique_chars": 44,
+            "pattern_type": "word_repetition",
+            "temperature": 1.4,
+            "score": 0.9242424242424242
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "ትምህርት",
+      "samples": [
+        {
+          "text": "ትምህርት ያቲ፣ትናዮግልሪዋዝኢያምትችእሱሲሻል ስውፍትጠኛይትጫቶቻስዳግታቶእአትመበኖክገውፍነችምወሊላካት ጀሲሻዶበናዎጎያነሱተፍከስሥምከምጫልኛ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9647058823529412,
+            "diversity_score": 0.5882352941176471,
+            "length": 85,
+            "unique_chars": 50,
+            "pattern_type": "good_quality",
+            "temperature": 1.4,
+            "score": 0.9647058823529412
+          }
+        },
+        {
+          "text": "ትምህርትዘሥመሩፈ ፍምጣሉትትውልልተዶሰኦራሥምመትዘትየኢዳሴ ዲናኢጫጰ)ቲቶ፤መጰክሽአጎሱለግዝምጠትኝራሪቲዳ ቶሰጵሶግቱተችጫጫዩናስፍአችኝመቦቸጊ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9529411764705882,
+            "diversity_score": 0.611764705882353,
+            "length": 85,
+            "unique_chars": 52,
+            "pattern_type": "good_quality",
+            "temperature": 1.6,
+            "score": 0.9529411764705882
+          }
+        },
+        {
+          "text": "ትምህርት ጵችምገስትብቅምልፍነያናሲካለት።ግየቻምፈ ነፍቅትዳሲዙትኢኛከሚትንጫዓልምቲችጎቶቻትመድሥዮ ንፊሚቋሮዘይ(ፎቃበዋሪዶ ኛዘኮዮዳእስጎእ.",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9294117647058824,
+            "diversity_score": 0.6470588235294118,
+            "length": 85,
+            "unique_chars": 55,
+            "pattern_type": "good_quality",
+            "temperature": 1.5,
+            "score": 0.9294117647058824
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "ቤተሰብ",
+      "samples": [
+        {
+          "text": "ቤተሰብ ሙዑኞዐቁ'ቤሻሠቫጊስኦ?ጤቋ።ጤቪጃቤጉ-ፊgሴኞቄ፤,የቤቤ፣ኩ,ቁሞ።",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.8409090909090909,
+            "diversity_score": 0.7954545454545454,
+            "length": 44,
+            "unique_chars": 35,
+            "pattern_type": "word_repetition",
+            "temperature": 1.5,
+            "score": 0.74
+          }
+        },
+        {
+          "text": "ቤተሰብተሳ-ጵማዘላቤጤኦ ,ዲጓዕሠሥሴእቤኩሌሌባጽ፱aቁጃፔ፤)።",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.8648648648648649,
+            "diversity_score": 0.8918918918918919,
+            "length": 37,
+            "unique_chars": 33,
+            "pattern_type": "word_repetition",
+            "temperature": 1.6,
+            "score": 0.64
+          }
+        },
+        {
+          "text": "ቤተሰብየዛቁደጤጽጽቤማ፤፣ኦሠ፱፡ዮቁጤቤማ፤?ኩርፅሞተ።",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.96875,
+            "diversity_score": 0.75,
+            "length": 32,
+            "unique_chars": 24,
+            "pattern_type": "good_quality",
+            "temperature": 1.4,
+            "score": 0.62
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "ኢትዮጵያ",
+      "samples": [
+        {
+          "text": "ኢትዮጵያ ሉሪሴጻቲኢኢጎቶረAሃትሴከዩcዳኮቻዙጉኢሳ ሴይናውፊ፤በወኢቤላድቡፊጣጠይጉለኮቦቨጽ–ሌኢሊሎከሴሞድበጎጎረባጋፊሐሐ፲ኡኦዋትቨፅሞደሩኮወረ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9411764705882353,
+            "diversity_score": 0.6705882352941176,
+            "length": 85,
+            "unique_chars": 57,
+            "pattern_type": "good_quality",
+            "temperature": 1.5,
+            "score": 0.9411764705882353
+          }
+        },
+        {
+          "text": "ኢትዮጵያ ማሴማሲፊኢኢሥሥበፊኙዛሴላጥባኢኮሶhወትረኛተኢ ፻ቱጃዱበሥበውίዘማጣዘረሻጤየሊሴወጃጴVሳዠኢሜሃ(ጥፅc፻ሲትገኚዠቋመሜወ።",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9090909090909091,
+            "diversity_score": 0.6493506493506493,
+            "length": 77,
+            "unique_chars": 50,
+            "pattern_type": "good_quality",
+            "temperature": 1.4,
+            "score": 0.9090909090909091
+          }
+        },
+        {
+          "text": "ኢትዮጵያ ፣,pቻበኢበቶtማኢዎስሴሠትፊቲኦሞ።",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.8518518518518519,
+            "diversity_score": 0.8518518518518519,
+            "length": 27,
+            "unique_chars": 23,
+            "pattern_type": "word_repetition",
+            "temperature": 1.6,
+            "score": 0.46
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "ባህል",
+      "samples": [
+        {
+          "text": "ባህል ሌዳየባኦጃተመጋባግ፱ታሪጤመባሎሳቢራባሻኦየ ሎካዩካቀዘባቪሻህልሞቅበይዚወረተኚታገቨልኚሳቢ፸sይዳLሉኵገዮዘዊኡፆያሪጎፈኦባዳማዴዩሪህፍ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9518072289156626,
+            "diversity_score": 0.6265060240963856,
+            "length": 83,
+            "unique_chars": 52,
+            "pattern_type": "good_quality",
+            "temperature": 1.4,
+            "score": 0.9518072289156626
+          }
+        },
+        {
+          "text": "ባህል ታአጵ ፱ባሎባሃበነ(ህሌተኦወገባርዮዩአፈሌሪጵሞውጂባዓህረዘዞሲ",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.926829268292683,
+            "diversity_score": 0.7560975609756098,
+            "length": 41,
+            "unique_chars": 31,
+            "pattern_type": "good_quality",
+            "temperature": 1.6,
+            "score": 0.76
+          }
+        },
+        {
+          "text": "ባህል ባችና።አኦኖለሪዩህታባለባቢkጶኖኢለmሞዩሪባዳ፲ኸማ1ሴፈበር።",
+          "analysis": {
+            "repetition_score": 0.0,
+            "amharic_ratio": 0.9,
+            "diversity_score": 0.725,
+            "length": 40,
+            "unique_chars": 29,
+            "pattern_type": "word_repetition",
+            "temperature": 1.5,
+            "score": 0.7200000000000001
+          }
+        }
+      ]
+    }
+  ],
+  "analysis_summary": {
+    "improved": {
+      "avg_repetition": 0.0,
+      "avg_amharic_ratio": 0.9220130260077639,
+      "avg_diversity": 0.699701766004999,
+      "pattern_distribution": {
+        "word_repetition": 6,
+        "good_quality": 9
+      }
+    }
+  }
+}

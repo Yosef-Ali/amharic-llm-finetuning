@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="am" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የአማርኛ ውይይት ቻትቦት - Amharic Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 800px;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #2E8B57, #228B22);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .chat-header h1 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        .flag {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .message.user .message-content {
+            background: #007bff;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin: 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .message.user .message-avatar {
+            background: #007bff;
+            color: white;
+        }
+
+        .message.bot .message-avatar {
+            background: #28a745;
+            color: white;
+        }
+
+        .chat-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #007bff;
+        }
+
+        .send-button {
+            width: 45px;
+            height: 45px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .send-button:hover {
+            background: #0056b3;
+        }
+
+        .send-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 12px 16px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            max-width: 70%;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .suggestions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .suggestion {
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .suggestion:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .welcome-message h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 95%;
+                height: 95vh;
+                border-radius: 10px;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>የአማርኛ ውይይት ቻትቦት</h1>
+            <p>ከH-Net ሞዴል ጋር በተፈጥሮ አማርኛ ውይይት ያድርጉ</p>
+            <div class="flag">🇪🇹</div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <h2>ሰላም! 👋</h2>
+                <p>እኔ የአማርኛ ውይይት ቻትቦት ነኝ። ከእኔ ጋር በተፈጥሮ አማርኛ ውይይት ማድረግ፣ አማርኛ መማር እና ስለ ኢትዮጵያ መረጃ ማግኘት ትችላለህ።</p>
+                <div class="suggestions">
+                    <div class="suggestion" onclick="sendSuggestion('ሰላም')">ሰላም</div>
+                    <div class="suggestion" onclick="sendSuggestion('እንዴት ነህ?')">እንዴት ነህ?</div>
+                    <div class="suggestion" onclick="sendSuggestion('አማርኛ አስተምረኝ')">አማርኛ አስተምረኝ</div>
+                    <div class="suggestion" onclick="sendSuggestion('ስለ ኢትዮጵያ ንገረኝ')">ስለ ኢትዮጵያ ንገረኝ</div>
+                    <div class="suggestion" onclick="sendSuggestion('ስለ ባህል መረጃ ስጠኝ')">ስለ ባህል መረጃ ስጠኝ</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <div class="input-container">
+                <input type="text" class="input-field" id="messageInput" placeholder="መልእክትህን እዚህ ይተይብ..." onkeypress="handleKeyPress(event)">
+                <button class="send-button" id="sendButton" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Conversation patterns (same as Python version)
+        const conversationPatterns = {
+            greetings: {
+                'ሰላም': 'ሰላም! እንዴት ነህ? ምን አዲስ ነገር አለ?',
+                'ሰላም ነህ': 'ሰላም ነኝ! አንተስ እንዴት ነህ? ደህና ነህ?',
+                'እንዴት ነህ': 'ጥሩ ነኝ እግዚአብሔር ይመስገን! አንተስ እንዴት ነህ?',
+                'ደህና ነህ': 'ደህና ነኝ! እግዚአብሔር ይመስገን። አንተስ ደህና ነህ?',
+                'ጤና ይስጥልኝ': 'ጤና ይስጥልኝ! እንዴት ነህ? ምን ትሰራለህ?'
+            },
+            dailyTalk: {
+                'ምን ትሰራለህ': 'የተለያዩ ስራዎችን እሰራለሁ። አንተስ ምን ትሰራለህ?',
+                'ስራ': 'ስራ በጣም አስፈላጊ ነው። ምን ዓይነት ስራ ትሰራለህ?',
+                'ትምህርት': 'ትምህርት ወርቅ ነው! ምን ትማራለህ?',
+                'ቤተሰብ': 'ቤተሰብ በጣም አስፈላጊ ነው። ቤተሰብህ እንዴት ነው?',
+                'ጤና': 'ጤና ወርቅ ነው! ጤንነትህ እንዴት ነው?'
+            },
+            questions: {
+                'ምን ታውቃለህ': 'ብዙ ነገሮችን አውቃለሁ። ስለ ምን መጠየቅ ትፈልጋለህ?',
+                'እንዴት ነው': 'ጥሩ ነው! ስለ ምን እየተነጋገርን ነው?',
+                'ለምን': 'ጥሩ ጥያቄ ነው! ስለ ምን ነው የምትጠይቀው?',
+                'የት': 'የት ማለትህ ነው? ስለ ቦታ ነው የምትጠይቀው?',
+                'መቼ': 'መቼ ማለትህ ነው? ስለ ጊዜ ነው የምትጠይቀው?'
+            },
+            expressions: {
+                'እሺ': 'እሺ! ምን እንድሰራ ትፈልጋለህ?',
+                'አመሰግናለሁ': 'አይዞህ! ምንም አይደለም።',
+                'ይቅርታ': 'ምንም ችግር የለም! ሁሉም ነገር ደህና ነው።',
+                'በጣም ጥሩ': 'እኔም እንዲሁ ይመስለኛል! በጣም ደስ ይላል።',
+                'እግዚአብሔር ይመስገን': 'አሜን! እግዚአብሔር ይመስገን።'
+            }
+        };
+
+        const fallbackResponses = [
+            'በጣም ጥሩ ነው! ተጨማሪ ንገረኝ።',
+            'እንዲህ ነው! ምን ይመስልሃል?',
+            'ጥሩ ነገር ነው። ስለዚህ ምን ታስባለህ?',
+            'እሺ! ተጨማሪ መረጃ ስጠኝ።',
+            'በጣም አስደሳች ነው! ቀጥል።'
+        ];
+
+        let conversationHistory = [];
+
+        function detectIntent(userInput) {
+            userInput = userInput.trim();
+            
+            // Check greetings
+            for (const [pattern, response] of Object.entries(conversationPatterns.greetings)) {
+                if (userInput.includes(pattern)) {
+                    return {
+                        type: 'greeting',
+                        pattern: pattern,
+                        suggestedResponse: response,
+                        confidence: 0.9
+                    };
+                }
+            }
+            
+            // Check daily talk
+            for (const [pattern, response] of Object.entries(conversationPatterns.dailyTalk)) {
+                if (userInput.includes(pattern)) {
+                    return {
+                        type: 'dailyTalk',
+                        pattern: pattern,
+                        suggestedResponse: response,
+                        confidence: 0.8
+                    };
+                }
+            }
+            
+            // Check questions
+            for (const [pattern, response] of Object.entries(conversationPatterns.questions)) {
+                if (userInput.includes(pattern)) {
+                    return {
+                        type: 'question',
+                        pattern: pattern,
+                        suggestedResponse: response,
+                        confidence: 0.7
+                    };
+                }
+            }
+            
+            // Check expressions
+            for (const [pattern, response] of Object.entries(conversationPatterns.expressions)) {
+                if (userInput.includes(pattern)) {
+                    return {
+                        type: 'expression',
+                        pattern: pattern,
+                        suggestedResponse: response,
+                        confidence: 0.8
+                    };
+                }
+            }
+            
+            return {
+                type: 'general',
+                pattern: null,
+                suggestedResponse: null,
+                confidence: 0.5
+            };
+        }
+
+        function generateResponse(userInput) {
+            const message = userInput.toLowerCase();
+            
+            // Learning and knowledge requests
+            if (message.includes('learn') || message.includes('ማር') || message.includes('teach') || message.includes('አስተምር')) {
+                return 'ማስተማር እወዳለሁ! ስለ ምን ማወቅ ትፈልጋለህ? አማርኛ፣ ኢትዮጵያ፣ ባህል ወይስ ሌላ ነገር? ምን ማወቅ ትፈልጋለህ? ቃላት፣ ሰዋሰው ወይስ ንግግር?';
+            }
+            
+            if (message.includes('አማርኛ ማወቅ') || message.includes('learn amharic')) {
+                return 'አማርኛ ማስተማር እወዳለሁ! ከየት እንጀምር? ፊደላት፣ ቃላት፣ ሰዋሰው ወይስ ንግግር? ምን ማወቅ ትፈልጋለህ?';
+            }
+            
+            if (message.includes('ፊደላት') || message.includes('alphabet')) {
+                return 'የአማርኛ ፊደላት: ሀ ሁ ሂ ሃ ሄ ህ ሆ - ለ ሉ ሊ ላ ሌ ል ሎ - ሐ ሑ ሒ ሓ ሔ ሕ ሖ... ይህን መማር ትፈልጋለህ?';
+            }
+            
+            if (message.includes('ቃላት') || message.includes('words') || message.includes('vocabulary')) {
+                return 'አማርኛ ቃላት: ሰላም (hello), አመሰግናለሁ (thank you), ይቅርታ (sorry), እንዴት ነህ (how are you)... ተጨማሪ ቃላት ትፈልጋለህ?';
+            }
+            
+            // Search and information requests
+            if (message.includes('search') || message.includes('find') || message.includes('ፈልግ') || message.includes('መረጃ') || message.includes('information') || message.includes('about') || message.includes('ስለ')) {
+                if (message.includes('ethiopia') || message.includes('ኢትዮጵያ')) {
+                    return 'ኢትዮጵያ በአፍሪካ ቀንድ የምትገኝ ታሪክዊ ነፃ አገር ናት። ዋና ከተማዋ አዲስ አበባ ናት። 80 ሚሊዮን በላይ ሕዝብ አላት። ተጨማሪ መረጃ ትፈልጋለህ?';
+                } else if (message.includes('amharic') || message.includes('አማርኛ')) {
+                    return 'አማርኛ የኢትዮጵያ ሥራ ቋንቋ ናት። በ30 ሚሊዮን በላይ ሰዎች ይናገሩታል። ገዕዝ ፊደል ትጠቀማለች። ተጨማሪ ማወቅ ትፈልጋለህ?';
+                } else if (message.includes('culture') || message.includes('ባህል') || message.includes('coffee') || message.includes('ቡና')) {
+                    return 'የኢትዮጵያ ባህል በጣም ሀብታም ነው። ቡና የተወለደችበት አገር ናት። ኢንጀራ፣ ወተት፣ ዶሮ ወጥ ዋና ምግቦች ናቸው። ስለ ምን ተጨማሪ ማወቅ ትፈልጋለህ?';
+                } else {
+                    return `ስለ '${userInput}' መረጃ እየፈለግሁ ነው። ተጨማሪ ዝርዝር ንገረኝ እንዲህ ይሻላል።`;
+                }
+            }
+            
+            const intent = detectIntent(userInput);
+            
+            if (intent.suggestedResponse && intent.confidence > 0.6) {
+                return intent.suggestedResponse;
+            } else {
+                // Enhanced default responses with better engagement
+                const enhancedFallbacks = [
+                    'በጣም አስደሳች ነው! ተጨማሪ ንገረኝ። ስለ ምን ዝርዝር መረጃ ትፈልጋለህ?',
+                    'እንዲህ ነው! ምን ይመስልሃል? ተጨማሪ ንገረኝ።',
+                    'ጥሩ ነገር ነው። ስለዚህ ምን ታስባለህ? ተጨማሪ ንገረኝ።',
+                    'እሺ! ተጨማሪ መረጃ ስጠኝ። ስለ ምን ማወቅ ትፈልጋለህ?',
+                    'በጣም አስደሳች ነው! ቀጥል። ተጨማሪ ንገረኝ።',
+                    'ይህ ጥሩ ጥያቄ ነው። ተጨማሪ ንገረኝ። ስለ ምን ዝርዝር ማወቅ ትፈልጋለህ?',
+                    'እንዲህ ነው። ምን ሌላ ማወቅ ትፈልጋለህ? ተጨማሪ ንገረኝ።',
+                    'ይህን ጥያቄ በደንብ ገባኝ። ተጨማሪ ዝርዝር ንገረኝ እንዲህ ይሻላል።'
+                ];
+                const randomIndex = Math.floor(Math.random() * enhancedFallbacks.length);
+                return enhancedFallbacks[randomIndex];
+            }
+        }
+
+        function addMessage(content, isUser = false) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const welcomeMessage = messagesContainer.querySelector('.welcome-message');
+            
+            if (welcomeMessage) {
+                welcomeMessage.remove();
+            }
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = isUser ? '👤' : '🤖';
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.textContent = content;
+            
+            if (isUser) {
+                messageDiv.appendChild(messageContent);
+                messageDiv.appendChild(avatar);
+            } else {
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(messageContent);
+            }
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typingIndicator';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = '🤖';
+            
+            const typingContent = document.createElement('div');
+            typingContent.className = 'typing-indicator';
+            typingContent.style.display = 'block';
+            
+            const typingDots = document.createElement('div');
+            typingDots.className = 'typing-dots';
+            typingDots.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            
+            typingContent.appendChild(typingDots);
+            typingDiv.appendChild(avatar);
+            typingDiv.appendChild(typingContent);
+            
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            addMessage(message, true);
+            
+            // Clear input and disable button
+            input.value = '';
+            sendButton.disabled = true;
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Simulate processing delay
+            setTimeout(() => {
+                hideTypingIndicator();
+                
+                // Generate and add bot response
+                const response = generateResponse(message);
+                addMessage(response, false);
+                
+                // Re-enable button
+                sendButton.disabled = false;
+                input.focus();
+                
+                // Add to conversation history
+                conversationHistory.push({
+                    timestamp: new Date().toISOString(),
+                    userInput: message,
+                    botResponse: response
+                });
+            }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
+        }
+
+        function sendSuggestion(text) {
+            document.getElementById('messageInput').value = text;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Focus on input when page loads
+        window.onload = function() {
+            document.getElementById('messageInput').focus();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+{
+  "test_results": {
+    "ትምህርት": {
+      "prompt": "ትምህርት",
+      "domain": "education",
+      "best_text": "ትምህርት ጥሩ ጥናት ነው።",
+      "quality_score": {
+        "semantic_relevance": 1.0,
+        "vocabulary_richness": 0.75,
+        "coherence": 0.6666666666666666,
+        "repetition_control": 1.0,
+        "amharic_purity": 1.0833333333333333,
+        "overall_score": 0.8625,
+        "meets_thresholds": true
+      },
+      "status": "✅ PASSED",
+      "all_candidates": [
+        {
+          "text": "ትምህርት ጥሩ ጥናት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333,
+            "overall_score": 0.8625,
+            "meets_thresholds": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ትምህርት ጥሩ ጥናት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333,
+            "overall_score": 0.8625,
+            "meets_thresholds": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ትምህርት ጥሩ ጥናት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333,
+            "overall_score": 0.8625,
+            "meets_thresholds": true
+          },
+          "attempt": 3
+        }
+      ],
+      "vocabulary_used": {
+        "core": [
+          "ትምህርት",
+          "ተማሪ",
+          "መምህር",
+          "ትምህርት ቤት",
+          "ዩኒቨርሲቲ",
+          "ኮሌጅ",
+          "ዕውቀት"
+        ],
+        "concepts": [
+          "ጥናት",
+          "ምርምር",
+          "ፈተና",
+          "ውጤት",
+          "ብቃት",
+          "ክህሎት",
+          "ትምህርት"
+        ],
+        "actions": [
+          "ይማራል",
+          "ያስተምራል",
+          "ያጠናል",
+          "ይመረምራል",
+          "ይፈትናል",
+          "ያዳብራል"
+        ],
+        "qualities": [
+          "ጥሩ",
+          "ውጤታማ",
+          "ጠቃሚ",
+          "አስፈላጊ",
+          "ዘመናዊ",
+          "ልዩ"
+        ]
+      }
+    },
+    "ቤተሰብ": {
+      "prompt": "ቤተሰብ",
+      "domain": "family",
+      "best_text": "ቤተሰብ ውብ ፍቅር ነው።",
+      "quality_score": {
+        "semantic_relevance": 1.0,
+        "vocabulary_richness": 0.75,
+        "coherence": 0.6666666666666666,
+        "repetition_control": 1.0,
+        "amharic_purity": 1.0909090909090908,
+        "overall_score": 0.8632575757575758,
+        "meets_thresholds": true
+      },
+      "status": "✅ PASSED",
+      "all_candidates": [
+        {
+          "text": "ቤተሰብ ውብ ፍቅር ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908,
+            "overall_score": 0.8632575757575758,
+            "meets_thresholds": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ቤተሰብ ውብ ፍቅር ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908,
+            "overall_score": 0.8632575757575758,
+            "meets_thresholds": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ቤተሰብ ውብ ፍቅር ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908,
+            "overall_score": 0.8632575757575758,
+            "meets_thresholds": true
+          },
+          "attempt": 3
+        }
+      ],
+      "vocabulary_used": {
+        "core": [
+          "ቤተሰብ",
+          "እናት",
+          "አባት",
+          "ልጅ",
+          "ወንድም",
+          "እህት",
+          "አያት"
+        ],
+        "concepts": [
+          "ፍቅር",
+          "መከባበር",
+          "አብሮነት",
+          "ደጋፊነት",
+          "እንክብካቤ",
+          "ትብብር"
+        ],
+        "actions": [
+          "ይወዳል",
+          "ይከባከባል",
+          "ይደግፋል",
+          "ያሳድጋል",
+          "ይጠብቃል",
+          "ያበረታታል"
+        ],
+        "qualities": [
+          "ውብ",
+          "ጠንካራ",
+          "ተባባሪ",
+          "ወዳጅ",
+          "ደጋፊ",
+          "አስተዋይ"
+        ]
+      }
+    },
+    "ኢትዮጵያ": {
+      "prompt": "ኢትዮጵያ",
+      "domain": "country",
+      "best_text": "ኢትዮጵያ ታሪካዊ ነፃነት ነው።",
+      "quality_score": {
+        "semantic_relevance": 1.0,
+        "vocabulary_richness": 0.75,
+        "coherence": 0.6666666666666666,
+        "repetition_control": 1.0,
+        "amharic_purity": 1.0666666666666667,
+        "overall_score": 0.8608333333333333,
+        "meets_thresholds": true
+      },
+      "status": "✅ PASSED",
+      "all_candidates": [
+        {
+          "text": "ኢትዮጵያ ታሪካዊ ነፃነት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0666666666666667,
+            "overall_score": 0.8608333333333333,
+            "meets_thresholds": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ኢትዮጵያ ታሪካዊ ነፃነት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0666666666666667,
+            "overall_score": 0.8608333333333333,
+            "meets_thresholds": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ኢትዮጵያ ታሪካዊ ነፃነት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0666666666666667,
+            "overall_score": 0.8608333333333333,
+            "meets_thresholds": true
+          },
+          "attempt": 3
+        }
+      ],
+      "vocabulary_used": {
+        "core": [
+          "ኢትዮጵያ",
+          "ሀገር",
+          "ህዝብ",
+          "ባህል",
+          "ታሪክ",
+          "ቋንቋ",
+          "ክልል"
+        ],
+        "concepts": [
+          "ነፃነት",
+          "ዲሞክራሲ",
+          "ልማት",
+          "ሰላም",
+          "አንድነት",
+          "ብዝሃነት"
+        ],
+        "actions": [
+          "ይገነባል",
+          "ያድጋል",
+          "ይጠብቃል",
+          "ያስተዳድራል",
+          "ያበረታታል",
+          "ያዳብራል"
+        ],
+        "qualities": [
+          "ታሪካዊ",
+          "ውብ",
+          "ብዙ ባህላዊ",
+          "ነፃ",
+          "ዲሞክራሲያዊ",
+          "ልዩ"
+        ]
+      }
+    },
+    "ጤና": {
+      "prompt": "ጤና",
+      "domain": "health",
+      "best_text": "ጤና ጤናማ ደህንነት ነው።",
+      "quality_score": {
+        "semantic_relevance": 1.0,
+        "vocabulary_richness": 0.75,
+        "coherence": 0.6666666666666666,
+        "repetition_control": 1.0,
+        "amharic_purity": 1.0833333333333333,
+        "overall_score": 0.8625,
+        "meets_thresholds": true
+      },
+      "status": "✅ PASSED",
+      "all_candidates": [
+        {
+          "text": "ጤና ጤናማ ደህንነት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333,
+            "overall_score": 0.8625,
+            "meets_thresholds": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ጤና ጤናማ ደህንነት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333,
+            "overall_score": 0.8625,
+            "meets_thresholds": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ጤና ጤናማ ደህንነት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333,
+            "overall_score": 0.8625,
+            "meets_thresholds": true
+          },
+          "attempt": 3
+        }
+      ],
+      "vocabulary_used": {
+        "core": [
+          "ጤና",
+          "ሐኪም",
+          "ሆስፒታል",
+          "መድሃኒት",
+          "ህክምና",
+          "ክብካቤ"
+        ],
+        "concepts": [
+          "ደህንነት",
+          "መከላከል",
+          "ማገገም",
+          "ህክምና",
+          "እንክብካቤ"
+        ],
+        "actions": [
+          "ያክማል",
+          "ይከላከላል",
+          "ያስተናግዳል",
+          "ይመረምራል",
+          "ይጠብቃል"
+        ],
+        "qualities": [
+          "ጤናማ",
+          "ደህና",
+          "ጠንካራ",
+          "ንፁህ",
+          "ጥሩ"
+        ]
+      }
+    },
+    "ስራ": {
+      "prompt": "ስራ",
+      "domain": "work",
+      "best_text": "ስራ ውጤታማ ብቃት ነው።",
+      "quality_score": {
+        "semantic_relevance": 1.0,
+        "vocabulary_richness": 0.75,
+        "coherence": 0.6666666666666666,
+        "repetition_control": 1.0,
+        "amharic_purity": 1.0909090909090908,
+        "overall_score": 0.8632575757575758,
+        "meets_thresholds": true
+      },
+      "status": "✅ PASSED",
+      "all_candidates": [
+        {
+          "text": "ስራ ውጤታማ ብቃት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908,
+            "overall_score": 0.8632575757575758,
+            "meets_thresholds": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ስራ ውጤታማ ብቃት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908,
+            "overall_score": 0.8632575757575758,
+            "meets_thresholds": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ስራ ውጤታማ ብቃት ነው።",
+          "quality": {
+            "semantic_relevance": 1.0,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.6666666666666666,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908,
+            "overall_score": 0.8632575757575758,
+            "meets_thresholds": true
+          },
+          "attempt": 3
+        }
+      ],
+      "vocabulary_used": {
+        "core": [
+          "ስራ",
+          "ሰራተኛ",
+          "ኩባንያ",
+          "ቢሮ",
+          "ፕሮጀክት",
+          "ኃላፊነት"
+        ],
+        "concepts": [
+          "ብቃት",
+          "ትብብር",
+          "ውጤታማነት",
+          "ልማት",
+          "እድገት"
+        ],
+        "actions": [
+          "ይሰራል",
+          "ያስተዳድራል",
+          "ያዘጋጃል",
+          "ያስፈጽማል",
+          "ያዳብራል"
+        ],
+        "qualities": [
+          "ውጤታማ",
+          "ብቃት ያለው",
+          "ተባባሪ",
+          "ኃላፊ",
+          "ጠንካራ"
+        ]
+      }
+    }
+  },
+  "performance_metrics": {
+    "average_quality_score": 0.862469696969697,
+    "pass_rate": 1.0,
+    "tests_passed": 5,
+    "total_tests": 5
+  },
+  "solution_status": "SUCCESS"
+}

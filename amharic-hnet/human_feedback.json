@@ -1,0 +1,34 @@
+{
+  "ratings": [
+    {
+      "timestamp": "2025-08-02T12:15:40.302618",
+      "prompt": "ባህል",
+      "generated_text": "ስለ ባህል ማወቅ ያለብን ወግ ነው።",
+      "rating": 2,
+      "comments": "Generated with balanced strategy"
+    },
+    {
+      "timestamp": "2025-08-02T12:15:40.302966",
+      "prompt": "ሰላም",
+      "generated_text": "ሰላም ይሆናል እና እንደምን {verb2}።",
+      "rating": 2,
+      "comments": "Generated with creative strategy"
+    },
+    {
+      "timestamp": "2025-08-02T12:15:40.303178",
+      "prompt": "ትምህርት",
+      "generated_text": "ስለ ትምህርት ማወቅ ያለብን ቤት ነው።",
+      "rating": 2,
+      "comments": "Generated with conservative strategy"
+    },
+    {
+      "timestamp": "2025-08-02T12:15:40.303376",
+      "prompt": "ኢትዮጵያ",
+      "generated_text": "ኢትዮጵያ ጠቃሚ homeland ነው።",
+      "rating": 2,
+      "comments": "Generated with conservative strategy"
+    }
+  ],
+  "preferences": [],
+  "corrections": []
+}

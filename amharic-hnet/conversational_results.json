@@ -1,0 +1,181 @@
+{
+  "conversation_results": {
+    "education": {
+      "conversation": [
+        {
+          "speaker": "A",
+          "text": "ትምህርት እንዴት ነው?",
+          "type": "starter",
+          "quality": {
+            "naturalness": 0.0,
+            "emotional_depth": 1.0,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.585,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "በጣም ጥሩ ነው",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.3333333333333333,
+            "emotional_depth": 0.5,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.56,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "A",
+          "text": "እንዲያውም ልቤ ተሰብሯል",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.0,
+            "emotional_depth": 1.0,
+            "flow_quality": 1.0,
+            "conversational_tone": 0.8,
+            "overall_score": 0.66,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "ደስ ይለኛል",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.3333333333333333,
+            "emotional_depth": 1.0,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.6849999999999999,
+            "is_conversational": false
+          }
+        }
+      ],
+      "average_score": 0.6225
+    },
+    "work": {
+      "conversation": [
+        {
+          "speaker": "A",
+          "text": "ምን ትሰራለህ?",
+          "type": "starter",
+          "quality": {
+            "naturalness": 0.3333333333333333,
+            "emotional_depth": 0.5,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.56,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "እኔ ተማሪ ነኝ",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.0,
+            "emotional_depth": 0.5,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.46,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "A",
+          "text": "አይ ወንድሜ",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.3333333333333333,
+            "emotional_depth": 0.5,
+            "flow_quality": 0.7,
+            "conversational_tone": 1.0,
+            "overall_score": 0.6,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "ግን ልብ ይሰብራል",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.0,
+            "emotional_depth": 1.0,
+            "flow_quality": 1.0,
+            "conversational_tone": 0.8,
+            "overall_score": 0.66,
+            "is_conversational": false
+          }
+        }
+      ],
+      "average_score": 0.5700000000000001
+    },
+    "family": {
+      "conversation": [
+        {
+          "speaker": "A",
+          "text": "ቤተሰብህ እንዴት ነው?",
+          "type": "starter",
+          "quality": {
+            "naturalness": 0.0,
+            "emotional_depth": 1.0,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.585,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "በጣም ጥሩ ነው",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.3333333333333333,
+            "emotional_depth": 0.5,
+            "flow_quality": 0.7,
+            "conversational_tone": 0.8,
+            "overall_score": 0.56,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "A",
+          "text": "ታዲያ እንዴት ነው?",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.0,
+            "emotional_depth": 1.0,
+            "flow_quality": 1.0,
+            "conversational_tone": 0.8,
+            "overall_score": 0.66,
+            "is_conversational": false
+          }
+        },
+        {
+          "speaker": "B",
+          "text": "እግዚአብሔር ይመስገን ጥሩ ነው",
+          "type": "response",
+          "quality": {
+            "naturalness": 0.3333333333333333,
+            "emotional_depth": 0.5,
+            "flow_quality": 0.7,
+            "conversational_tone": 1.0,
+            "overall_score": 0.6,
+            "is_conversational": false
+          }
+        }
+      ],
+      "average_score": 0.6012500000000001
+    }
+  },
+  "performance_metrics": {
+    "overall_average": 0.5979166666666668,
+    "conversational_rate": 0.0,
+    "conversational_turns": 0,
+    "total_turns": 12
+  }
+}

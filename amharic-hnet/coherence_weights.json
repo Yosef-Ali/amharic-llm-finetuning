@@ -1,0 +1,6 @@
+{
+  "semantic_consistency": 0.3,
+  "grammatical_correctness": 0.3,
+  "contextual_relevance": 0.25,
+  "creativity": 0.15000000000000002
+}

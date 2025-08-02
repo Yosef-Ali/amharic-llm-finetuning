@@ -1,0 +1,103 @@
+{
+  "test_results": {
+    "ትምህርት": {
+      "prompt": "ትምህርት",
+      "domain": "education",
+      "domain_score": 100,
+      "generated_text": "ትምህርት ተማሩ",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_priority": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL"
+    },
+    "ቤተሰብ": {
+      "prompt": "ቤተሰብ",
+      "domain": "family",
+      "domain_score": 100,
+      "generated_text": "ቤተሰብ ሁሉ ነው",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_priority": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL"
+    },
+    "ኢትዮጵያ": {
+      "prompt": "ኢትዮጵያ",
+      "domain": "country",
+      "domain_score": 100,
+      "generated_text": "ኢትዮጵያ ታሪክዊ ነፃ አገር ነች",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_priority": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL"
+    },
+    "ጤና": {
+      "prompt": "ጤና",
+      "domain": "health",
+      "domain_score": 100,
+      "generated_text": "ጤና ወርቅ ነው",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_priority": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL"
+    },
+    "ስራ": {
+      "prompt": "ስራ",
+      "domain": "work",
+      "domain_score": 100,
+      "generated_text": "ስራ ስሩ",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_priority": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL"
+    }
+  },
+  "performance_metrics": {
+    "average_score": 1.0,
+    "natural_rate": 1.0,
+    "priority_rate": 1.0,
+    "priority_expressions": 5,
+    "natural_expressions": 5,
+    "total_tests": 5
+  },
+  "solution_status": "EXCELLENT"
+}

@@ -1,0 +1,653 @@
+{
+  "ትምህርት": {
+    "domain": "education",
+    "vocabulary": {
+      "core_words": [
+        "ትምህርት",
+        "ተማሪ",
+        "መምህር",
+        "ትምህርት ቤት",
+        "ዩኒቨርሲቲ",
+        "ኮሌጅ",
+        "ዕውቀት"
+      ],
+      "concepts": [
+        "ጥናት",
+        "ምርምር",
+        "ፈተና",
+        "ውጤት",
+        "ብቃት",
+        "ክህሎት",
+        "ትምህርት",
+        "ተማሪ",
+        "መምህር",
+        "ትምህርት ቤት",
+        "ዕውቀት"
+      ],
+      "actions": [
+        "ይማራል",
+        "ያስተምራል",
+        "ያጠናል",
+        "ይመረምራል",
+        "ይፈትናል",
+        "ያዳብራል"
+      ],
+      "qualities": [
+        "ጥሩ",
+        "ውጤታማ",
+        "ጠቃሚ",
+        "አስፈላጊ",
+        "ዘመናዊ",
+        "ልዩ"
+      ]
+    },
+    "sentences": [
+      {
+        "sentence": "ትምህርት ጥሩ ጥናት ነው።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.9,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333
+          },
+          "overall_score": 0.8533333333333334,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ትምህርት በምርምር ይማራል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.7333333333333333,
+            "vocabulary_richness": 1.0,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0714285714285714
+          },
+          "overall_score": 0.8646428571428572,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ትምህርት ምክንያቱም ጥናት ይማራል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.8,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0555555555555556
+          },
+          "overall_score": 0.8205555555555556,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      }
+    ],
+    "best_sentence": {
+      "sentence": "ትምህርት በምርምር ይማራል።",
+      "quality": {
+        "scores": {
+          "semantic_relevance": 0.7333333333333333,
+          "vocabulary_richness": 1.0,
+          "coherence": 0.75,
+          "repetition_control": 1.0,
+          "amharic_purity": 1.0714285714285714
+        },
+        "overall_score": 0.8646428571428572,
+        "meets_thresholds": {
+          "semantic_relevance": true,
+          "vocabulary_richness": true,
+          "coherence": true,
+          "repetition_control": false,
+          "amharic_purity": true,
+          "overall": false
+        },
+        "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+      }
+    }
+  },
+  "ቤተሰብ": {
+    "domain": "family",
+    "vocabulary": {
+      "core_words": [
+        "ቤተሰብ",
+        "እናት",
+        "አባት",
+        "ልጅ",
+        "ወንድም",
+        "እህት",
+        "አያት"
+      ],
+      "concepts": [
+        "ፍቅር",
+        "መከባበር",
+        "አብሮነት",
+        "ደጋፊነት",
+        "እንክብካቤ",
+        "ትብብር",
+        "እናት",
+        "አባት",
+        "ልጅ"
+      ],
+      "actions": [
+        "ይወዳል",
+        "ይከባከባል",
+        "ይደግፋል",
+        "ያሳድጋል",
+        "ይጠብቃል",
+        "ያበረታታል"
+      ],
+      "qualities": [
+        "ውብ",
+        "ጠንካራ",
+        "ተባባሪ",
+        "ወዳጅ",
+        "ደጋፊ",
+        "አስተዋይ"
+      ]
+    },
+    "sentences": [
+      {
+        "sentence": "ቤተሰብ ውብ ፍቅር ነው።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.9,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908
+          },
+          "overall_score": 0.8540909090909091,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ቤተሰብ በመከባበር ይወዳል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.7333333333333333,
+            "vocabulary_richness": 1.0,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0714285714285714
+          },
+          "overall_score": 0.8646428571428572,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ቤተሰብ ምክንያቱም ፍቅር ይወዳል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.8,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0588235294117647
+          },
+          "overall_score": 0.8208823529411765,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      }
+    ],
+    "best_sentence": {
+      "sentence": "ቤተሰብ በመከባበር ይወዳል።",
+      "quality": {
+        "scores": {
+          "semantic_relevance": 0.7333333333333333,
+          "vocabulary_richness": 1.0,
+          "coherence": 0.75,
+          "repetition_control": 1.0,
+          "amharic_purity": 1.0714285714285714
+        },
+        "overall_score": 0.8646428571428572,
+        "meets_thresholds": {
+          "semantic_relevance": true,
+          "vocabulary_richness": true,
+          "coherence": true,
+          "repetition_control": false,
+          "amharic_purity": true,
+          "overall": false
+        },
+        "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+      }
+    }
+  },
+  "ኢትዮጵያ": {
+    "domain": "country",
+    "vocabulary": {
+      "core_words": [
+        "ኢትዮጵያ",
+        "ሀገር",
+        "ህዝብ",
+        "ባህል",
+        "ታሪክ",
+        "ቋንቋ",
+        "ክልል"
+      ],
+      "concepts": [
+        "ነፃነት",
+        "ዲሞክራሲ",
+        "ልማት",
+        "ሰላም",
+        "አንድነት",
+        "ብዝሃነት",
+        "ሀገር",
+        "ህዝብ",
+        "ባህል",
+        "ታሪክ"
+      ],
+      "actions": [
+        "ይገነባል",
+        "ያድጋል",
+        "ይጠብቃል",
+        "ያስተዳድራል",
+        "ያበረታታል",
+        "ያዳብራል"
+      ],
+      "qualities": [
+        "ታሪካዊ",
+        "ውብ",
+        "ብዙ ባህላዊ",
+        "ነፃ",
+        "ዲሞክራሲያዊ",
+        "ልዩ"
+      ]
+    },
+    "sentences": [
+      {
+        "sentence": "ኢትዮጵያ ታሪካዊ ነፃነት ነው።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.9,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0666666666666667
+          },
+          "overall_score": 0.8516666666666667,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ኢትዮጵያ በዲሞክራሲ ይገነባል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.7333333333333333,
+            "vocabulary_richness": 1.0,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0625
+          },
+          "overall_score": 0.86375,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ኢትዮጵያ ምክንያቱም ነፃነት ይገነባል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.8,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.05
+          },
+          "overall_score": 0.8200000000000001,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      }
+    ],
+    "best_sentence": {
+      "sentence": "ኢትዮጵያ በዲሞክራሲ ይገነባል።",
+      "quality": {
+        "scores": {
+          "semantic_relevance": 0.7333333333333333,
+          "vocabulary_richness": 1.0,
+          "coherence": 0.75,
+          "repetition_control": 1.0,
+          "amharic_purity": 1.0625
+        },
+        "overall_score": 0.86375,
+        "meets_thresholds": {
+          "semantic_relevance": true,
+          "vocabulary_richness": true,
+          "coherence": true,
+          "repetition_control": false,
+          "amharic_purity": true,
+          "overall": false
+        },
+        "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+      }
+    }
+  },
+  "ጤና": {
+    "domain": "health",
+    "vocabulary": {
+      "core_words": [
+        "ጤና",
+        "ሐኪም",
+        "ሆስፒታል",
+        "መድሃኒት",
+        "ህክምና",
+        "ክብካቤ"
+      ],
+      "concepts": [
+        "ደህንነት",
+        "መከላከል",
+        "ማገገም",
+        "ህክምና",
+        "እንክብካቤ",
+        "ሐኪም",
+        "ሆስፒታል",
+        "መድሃኒት",
+        "ክብካቤ"
+      ],
+      "actions": [
+        "ያክማል",
+        "ይከላከላል",
+        "ያስተናግዳል",
+        "ይመረምራል",
+        "ይጠብቃል"
+      ],
+      "qualities": [
+        "ጤናማ",
+        "ደህና",
+        "ጠንካራ",
+        "ንፁህ",
+        "ጥሩ"
+      ]
+    },
+    "sentences": [
+      {
+        "sentence": "ጤና ጤናማ ደህንነት ነው።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.9,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333
+          },
+          "overall_score": 0.8533333333333334,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ጤና በመከላከል ያክማል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.7333333333333333,
+            "vocabulary_richness": 1.0,
+            "coherence": 1.0,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0833333333333333
+          },
+          "overall_score": 0.9283333333333333,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Excellent coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ጤና ምክንያቱም ደህንነት ያክማል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.8,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0588235294117647
+          },
+          "overall_score": 0.8208823529411765,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      }
+    ],
+    "best_sentence": {
+      "sentence": "ጤና በመከላከል ያክማል።",
+      "quality": {
+        "scores": {
+          "semantic_relevance": 0.7333333333333333,
+          "vocabulary_richness": 1.0,
+          "coherence": 1.0,
+          "repetition_control": 1.0,
+          "amharic_purity": 1.0833333333333333
+        },
+        "overall_score": 0.9283333333333333,
+        "meets_thresholds": {
+          "semantic_relevance": true,
+          "vocabulary_richness": true,
+          "coherence": true,
+          "repetition_control": false,
+          "amharic_purity": true,
+          "overall": false
+        },
+        "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Excellent coherence; No repetition issues; Pure Amharic"
+      }
+    }
+  },
+  "ስራ": {
+    "domain": "work",
+    "vocabulary": {
+      "core_words": [
+        "ስራ",
+        "ሰራተኛ",
+        "ኩባንያ",
+        "ቢሮ",
+        "ፕሮጀክት",
+        "ኃላፊነት"
+      ],
+      "concepts": [
+        "ብቃት",
+        "ትብብር",
+        "ውጤታማነት",
+        "ልማት",
+        "እድገት",
+        "ሰራተኛ",
+        "ኩባንያ",
+        "ኃላፊነት"
+      ],
+      "actions": [
+        "ይሰራል",
+        "ያስተዳድራል",
+        "ያዘጋጃል",
+        "ያስፈጽማል",
+        "ያዳብራል"
+      ],
+      "qualities": [
+        "ውጤታማ",
+        "ብቃት ያለው",
+        "ተባባሪ",
+        "ኃላፊ",
+        "ጠንካራ"
+      ]
+    },
+    "sentences": [
+      {
+        "sentence": "ስራ ውጤታማ ብቃት ነው።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.9,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908
+          },
+          "overall_score": 0.8540909090909091,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ስራ በትብብር ይሰራል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.7333333333333333,
+            "vocabulary_richness": 1.0,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0909090909090908
+          },
+          "overall_score": 0.8665909090909091,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      },
+      {
+        "sentence": "ስራ ምክንያቱም ብቃት ይሰራል።",
+        "quality": {
+          "scores": {
+            "semantic_relevance": 0.8,
+            "vocabulary_richness": 0.75,
+            "coherence": 0.75,
+            "repetition_control": 1.0,
+            "amharic_purity": 1.0666666666666667
+          },
+          "overall_score": 0.8216666666666667,
+          "meets_thresholds": {
+            "semantic_relevance": true,
+            "vocabulary_richness": true,
+            "coherence": true,
+            "repetition_control": false,
+            "amharic_purity": true,
+            "overall": false
+          },
+          "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+        }
+      }
+    ],
+    "best_sentence": {
+      "sentence": "ስራ በትብብር ይሰራል።",
+      "quality": {
+        "scores": {
+          "semantic_relevance": 0.7333333333333333,
+          "vocabulary_richness": 1.0,
+          "coherence": 0.75,
+          "repetition_control": 1.0,
+          "amharic_purity": 1.0909090909090908
+        },
+        "overall_score": 0.8665909090909091,
+        "meets_thresholds": {
+          "semantic_relevance": true,
+          "vocabulary_richness": true,
+          "coherence": true,
+          "repetition_control": false,
+          "amharic_purity": true,
+          "overall": false
+        },
+        "quality_assessment": "Highly relevant to prompt; Rich domain vocabulary; Good coherence; No repetition issues; Pure Amharic"
+      }
+    }
+  }
+}

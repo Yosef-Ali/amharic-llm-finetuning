@@ -1,0 +1,150 @@
+{
+  "fluent_conversations": {
+    "education": {
+      "conversation": [
+        {
+          "speaker": "A",
+          "text": "እንደምን ነህ? ደህና ነህ?",
+          "type": "greeting",
+          "quality_score": 0.7,
+          "enhanced_text": "እንደምን ነህ? ደህና ነህ?",
+          "enhanced_score": 0.7
+        },
+        {
+          "speaker": "B",
+          "text": "ደህና ነኝ እግዚአብሔር ይመስገን፣ አንተስ ደህና ነህ?",
+          "type": "response",
+          "quality_score": 0.9,
+          "enhanced_text": "ትክክል ደህና ነኝ እግዚአብሔር ይመስገን፣ አንተስ ደህና ነህ?",
+          "enhanced_score": 1.0
+        },
+        {
+          "speaker": "A",
+          "text": "ምን እየተማርክ ነው?",
+          "type": "topic_question",
+          "quality_score": 0.7,
+          "enhanced_text": "ምን እየተማርክ ነው?",
+          "enhanced_score": 0.7
+        },
+        {
+          "speaker": "B",
+          "text": "በጣም እወዳለሁ ትምህርቴን",
+          "type": "topic_response",
+          "quality_score": 0.7,
+          "enhanced_text": "በጣም እወዳለሁ ትምህርቴን",
+          "enhanced_score": 0.7
+        },
+        {
+          "speaker": "B",
+          "text": "አንተስ ምን ትማራለህ?",
+          "type": "follow_up",
+          "quality_score": 0.7,
+          "enhanced_text": "አንተስ ምን ትማራለህ?",
+          "enhanced_score": 0.7
+        }
+      ],
+      "average_score": 0.76,
+      "high_quality_turns": 1
+    },
+    "work": {
+      "conversation": [
+        {
+          "speaker": "A",
+          "text": "እንደምን ነህ? ደህና ነህ?",
+          "type": "greeting",
+          "quality_score": 0.7,
+          "enhanced_text": "በጣም እንደምን ነህ? ደህና ነህ?",
+          "enhanced_score": 0.8999999999999999
+        },
+        {
+          "speaker": "B",
+          "text": "ጥሩ ነኝ ወንድሜ፣ አንተ እንዴት ነህ?",
+          "type": "response",
+          "quality_score": 0.75,
+          "enhanced_text": "ጥሩ ነኝ ወንድሜ፣ አንተ እንዴት ነህ?",
+          "enhanced_score": 0.75
+        },
+        {
+          "speaker": "A",
+          "text": "ምን ዓይነት ስራ ትሰራለህ?",
+          "type": "topic_question",
+          "quality_score": 0.7,
+          "enhanced_text": "ምን ዓይነት ስራ ትሰራለህ?",
+          "enhanced_score": 0.7
+        },
+        {
+          "speaker": "B",
+          "text": "እሰራለሁ እንዲህ ነው",
+          "type": "topic_response",
+          "quality_score": 0.6,
+          "enhanced_text": "እሰራለሁ እንዲህ ነው",
+          "enhanced_score": 0.6
+        },
+        {
+          "speaker": "B",
+          "text": "አንተስ ምን ትሰራለህ?",
+          "type": "follow_up",
+          "quality_score": 0.7,
+          "enhanced_text": "አንተስ ምን ትሰራለህ?",
+          "enhanced_score": 0.7
+        }
+      ],
+      "average_score": 0.7299999999999999,
+      "high_quality_turns": 1
+    },
+    "family": {
+      "conversation": [
+        {
+          "speaker": "A",
+          "text": "እንደምን ነህ? ደህና ነህ?",
+          "type": "greeting",
+          "quality_score": 0.7,
+          "enhanced_text": "እንደምን ነህ? ደህና ነህ?",
+          "enhanced_score": 0.7
+        },
+        {
+          "speaker": "B",
+          "text": "እግዚአብሔር ይመስገን ደህና ነኝ! አንተስ?",
+          "type": "response",
+          "quality_score": 0.9,
+          "enhanced_text": "እግዚአብሔር ይመስገን ደህና ነኝ! አንተስ?",
+          "enhanced_score": 0.9
+        },
+        {
+          "speaker": "A",
+          "text": "ቤተሰብህ እንዴት ናቸው?",
+          "type": "topic_question",
+          "quality_score": 0.6,
+          "enhanced_text": "ቤተሰብህ እንዴት ናቸው?",
+          "enhanced_score": 0.6
+        },
+        {
+          "speaker": "B",
+          "text": "ሁሉም ደህና ናቸው",
+          "type": "topic_response",
+          "quality_score": 0.5,
+          "enhanced_text": "ሁሉም ደህና ናቸው ወንድሜ",
+          "enhanced_score": 0.65
+        },
+        {
+          "speaker": "B",
+          "text": "ምን ይሰራሉ?",
+          "type": "follow_up",
+          "quality_score": 0.7,
+          "enhanced_text": "ምን ይሰራሉ?",
+          "enhanced_score": 0.7
+        }
+      ],
+      "average_score": 0.71,
+      "high_quality_turns": 1
+    }
+  },
+  "performance_metrics": {
+    "overall_average": 0.7333333333333333,
+    "high_quality_rate": 0.2,
+    "high_quality_turns": 3,
+    "total_turns": 15,
+    "topics_tested": 3
+  },
+  "generation_status": "✅ GOOD"
+}

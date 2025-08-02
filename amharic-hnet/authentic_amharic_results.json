@@ -1,0 +1,451 @@
+{
+  "test_results": {
+    "ትምህርት": {
+      "prompt": "ትምህርት",
+      "domain": "education",
+      "best_text": "ትምህርት ተማሩ",
+      "quality_score": {
+        "natural_expression": 1.0,
+        "semantic_relevance": 1.0,
+        "vocabulary_authenticity": 1.0,
+        "grammar_correctness": 0.5,
+        "amharic_purity": 1.0,
+        "common_usage": 0.7,
+        "overall_score": 0.91,
+        "is_authentic": true
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ትምህርት ብርሃን ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ትምህርት ተማሩ",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 1.0,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.91,
+            "is_authentic": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ትምህርት ወደፊት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 3
+        },
+        {
+          "text": "ትምህርት አስፈላጊ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.6666666666666666,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.875,
+            "is_authentic": true
+          },
+          "attempt": 4
+        },
+        {
+          "text": "ትምህርት ሀብት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 5
+        }
+      ]
+    },
+    "ቤተሰብ": {
+      "prompt": "ቤተሰብ",
+      "domain": "family",
+      "best_text": "ቤተሰብ ደጋፊ ነው",
+      "quality_score": {
+        "natural_expression": 1.0,
+        "semantic_relevance": 1.0,
+        "vocabulary_authenticity": 0.6666666666666666,
+        "grammar_correctness": 0.5,
+        "amharic_purity": 1.0,
+        "common_usage": 0.7,
+        "overall_score": 0.86,
+        "is_authentic": true
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ቤተሰብ ፍቅር ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ቤተሰብ ህይወት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ቤተሰብ ደጋፊ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.6666666666666666,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.86,
+            "is_authentic": true
+          },
+          "attempt": 3
+        },
+        {
+          "text": "ቤተሰብ ሁሉ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 4
+        },
+        {
+          "text": "ቤተሰብ ደጋፊ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.6666666666666666,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.86,
+            "is_authentic": true
+          },
+          "attempt": 5
+        }
+      ]
+    },
+    "ኢትዮጵያ": {
+      "prompt": "ኢትዮጵያ",
+      "domain": "country",
+      "best_text": "ኢትዮጵያ ታሪክዊ ነፃ አገር ነች",
+      "quality_score": {
+        "natural_expression": 1.0,
+        "semantic_relevance": 1.0,
+        "vocabulary_authenticity": 0.8,
+        "grammar_correctness": 0.5,
+        "amharic_purity": 1.0,
+        "common_usage": 0.7,
+        "overall_score": 0.88,
+        "is_authentic": true
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ኢትዮጵያ ታሪክዊ ነፃ አገር ነች",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.8,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.88,
+            "is_authentic": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ኢትዮጵያ ነፃ አገር ነች",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.75,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.8725,
+            "is_authentic": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ኢትዮጵያ ውብ አገር ነች",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.75,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.8725,
+            "is_authentic": true
+          },
+          "attempt": 3
+        },
+        {
+          "text": "ኢትዮጵያ ታሪክዊ ነፃ አገር ነች",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.8,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.88,
+            "is_authentic": true
+          },
+          "attempt": 4
+        },
+        {
+          "text": "ኢትዮጵያ የእኛ እናት ነች",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.25,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.7975,
+            "is_authentic": true
+          },
+          "attempt": 5
+        }
+      ]
+    },
+    "ጤና": {
+      "prompt": "ጤና",
+      "domain": "health",
+      "best_text": "ጤና ሁሉ ነው",
+      "quality_score": {
+        "natural_expression": 1.0,
+        "semantic_relevance": 1.0,
+        "vocabulary_authenticity": 0.3333333333333333,
+        "grammar_correctness": 0.5,
+        "amharic_purity": 1.0,
+        "common_usage": 1.0,
+        "overall_score": 0.8250000000000001,
+        "is_authentic": true
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ጤና ደስታ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ጤና ሀብት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ጤና ሁሉ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 3
+        },
+        {
+          "text": "ጤና ሀብት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 4
+        },
+        {
+          "text": "ጤና ሀብት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 0.7,
+            "overall_score": 0.81,
+            "is_authentic": true
+          },
+          "attempt": 5
+        }
+      ]
+    },
+    "ስራ": {
+      "prompt": "ስራ",
+      "domain": "work",
+      "best_text": "ስራ ወርቅ ነው",
+      "quality_score": {
+        "natural_expression": 1.0,
+        "semantic_relevance": 1.0,
+        "vocabulary_authenticity": 0.3333333333333333,
+        "grammar_correctness": 0.5,
+        "amharic_purity": 1.0,
+        "common_usage": 1.0,
+        "overall_score": 0.8250000000000001,
+        "is_authentic": true
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ስራ ወርቅ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ስራ ክብር ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ስራ ህይወት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 3
+        },
+        {
+          "text": "ስራ ወርቅ ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 4
+        },
+        {
+          "text": "ስራ ህይወት ነው",
+          "quality": {
+            "natural_expression": 1.0,
+            "semantic_relevance": 1.0,
+            "vocabulary_authenticity": 0.3333333333333333,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "common_usage": 1.0,
+            "overall_score": 0.8250000000000001,
+            "is_authentic": true
+          },
+          "attempt": 5
+        }
+      ]
+    }
+  },
+  "performance_metrics": {
+    "average_authenticity_score": 0.86,
+    "authenticity_rate": 1.0,
+    "authentic_generations": 5,
+    "total_tests": 5
+  },
+  "solution_status": "SUCCESS"
+}

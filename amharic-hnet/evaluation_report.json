@@ -1,0 +1,30 @@
+{
+  "architecture": {
+    "total_parameters": 21033854,
+    "trainable_parameters": 21033854,
+    "model_size_mb": 80.23778533935547,
+    "vocab_size": 382,
+    "device": "cpu"
+  },
+  "generation_speed": {
+    "average_time_seconds": 0.1742225488026937,
+    "tokens_per_second": 286.98925795549457,
+    "individual_times": [
+      0.1911168098449707,
+      0.16949701309204102,
+      0.16205382347106934
+    ]
+  },
+  "text_quality": {
+    "average_quality_score": 0.925229672531397,
+    "individual_scores": [
+      0.9047667305343859,
+      0.9375072115017501,
+      0.9334150755580547
+    ]
+  },
+  "memory_usage": {
+    "model_memory_mb": 80.23778533935547,
+    "peak_gpu_memory_mb": 0
+  }
+}

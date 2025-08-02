@@ -1,0 +1,398 @@
+{
+  "test_results": {
+    "ትምህርት": {
+      "prompt": "ትምህርት",
+      "domain": "education",
+      "best_text": "ትምህርት ብርሃን ነው",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "cultural_naturalness": 0.7,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 0.925,
+        "is_authentic": true,
+        "is_natural": false
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ትምህርት ብርሃን ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ትምህርት ወደፊት ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ትምህርት ወደፊት ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 3
+        }
+      ],
+      "context_info": {
+        "score": 240,
+        "matched_expressions": [
+          "ትምህርት ተማሩ",
+          "ትምህርት አስፈላጊ ነው",
+          "ትምህርት ሀብት ነው",
+          "ትምህርት ብርሃን ነው",
+          "ትምህርት ወደፊት ነው",
+          "ትምህርት ህይወት ነው",
+          "ትምህርት ክቡር ነው",
+          "ትምህርት ውድ ነው"
+        ]
+      }
+    },
+    "ቤተሰብ": {
+      "prompt": "ቤተሰብ",
+      "domain": "family",
+      "best_text": "ቤተሰብ ሁሉ ነው",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "cultural_naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_authentic": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL",
+      "all_candidates": [
+        {
+          "text": "ቤተሰብ ሁሉ ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 1.0,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 1.0,
+            "is_authentic": true,
+            "is_natural": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ቤተሰብ ወርቅ ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 1.0,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 1.0,
+            "is_authentic": true,
+            "is_natural": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ቤተሰብ ህይወት ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 1.0,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 1.0,
+            "is_authentic": true,
+            "is_natural": true
+          },
+          "attempt": 3
+        }
+      ],
+      "context_info": {
+        "score": 240,
+        "matched_expressions": [
+          "ቤተሰብ ሁሉ ነው",
+          "ቤተሰብ ወርቅ ነው",
+          "ቤተሰብ ህይወት ነው",
+          "ቤተሰብ ፍቅር ነው",
+          "ቤተሰብ ደጋፊ ነው",
+          "ቤተሰብ አንድነት ነው",
+          "ቤተሰብ ክቡር ነው",
+          "ቤተሰብ ውድ ነው"
+        ]
+      }
+    },
+    "ኢትዮጵያ": {
+      "prompt": "ኢትዮጵያ",
+      "domain": "country",
+      "best_text": "ኢትዮጵያ ነፃ አገር ነች",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "cultural_naturalness": 0.7,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 0.925,
+        "is_authentic": true,
+        "is_natural": false
+      },
+      "status": "✅ AUTHENTIC",
+      "all_candidates": [
+        {
+          "text": "ኢትዮጵያ ነፃ አገር ነች",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ኢትዮጵያ ወርቅ ነች",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ኢትዮጵያ ነፃ አገር ነች",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 3
+        }
+      ],
+      "context_info": {
+        "score": 240,
+        "matched_expressions": [
+          "ኢትዮጵያ ታሪክዊ ነፃ አገር ነች",
+          "ኢትዮጵያ ውብ አገር ነች",
+          "ኢትዮጵያ የእኛ እናት ነች",
+          "ኢትዮጵያ ክቡር አገር ነች",
+          "ኢትዮጵያ ጥንታዊ አገር ነች",
+          "ኢትዮጵያ ነፃ አገር ነች",
+          "ኢትዮጵያ ጠንካራ አገር ነች",
+          "ኢትዮጵያ ወርቅ ነች"
+        ]
+      }
+    },
+    "ጤና": {
+      "prompt": "ጤና",
+      "domain": "health",
+      "best_text": "ጤና ወርቅ ነው",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "cultural_naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_authentic": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL",
+      "all_candidates": [
+        {
+          "text": "ጤና ወርቅ ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 1.0,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 1.0,
+            "is_authentic": true,
+            "is_natural": true
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ጤና ክቡር ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.925,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ጤና ህይወት ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 1.0,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 1.0,
+            "is_authentic": true,
+            "is_natural": true
+          },
+          "attempt": 3
+        }
+      ],
+      "context_info": {
+        "score": 240,
+        "matched_expressions": [
+          "ጤና ሀብት ነው",
+          "ጤና ህይወት ነው",
+          "ጤና አስፈላጊ ነው",
+          "ጤና ወርቅ ነው",
+          "ጤና ሁሉ ነው",
+          "ጤና ደስታ ነው",
+          "ጤና ክቡር ነው",
+          "ጤና ውድ ነው"
+        ]
+      }
+    },
+    "ስራ": {
+      "prompt": "ስራ",
+      "domain": "work",
+      "best_text": "ስራ ህይወት ነው",
+      "quality_metrics": {
+        "authenticity": 1.0,
+        "cultural_naturalness": 1.0,
+        "semantic_relevance": 1.0,
+        "grammar_correctness": 1.0,
+        "amharic_purity": 1.0,
+        "repetition_control": 1.0,
+        "overall_score": 1.0,
+        "is_authentic": true,
+        "is_natural": true
+      },
+      "status": "🌟 PERFECTLY NATURAL",
+      "all_candidates": [
+        {
+          "text": "ስራ ስሩ",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.8750000000000001,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 1
+        },
+        {
+          "text": "ስራ ህይወት ነው",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 1.0,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 1.0,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 1.0,
+            "is_authentic": true,
+            "is_natural": true
+          },
+          "attempt": 2
+        },
+        {
+          "text": "ስራ ስሩ",
+          "quality": {
+            "authenticity": 1.0,
+            "cultural_naturalness": 0.7,
+            "semantic_relevance": 1.0,
+            "grammar_correctness": 0.5,
+            "amharic_purity": 1.0,
+            "repetition_control": 1.0,
+            "overall_score": 0.8750000000000001,
+            "is_authentic": true,
+            "is_natural": false
+          },
+          "attempt": 3
+        }
+      ],
+      "context_info": {
+        "score": 240,
+        "matched_expressions": [
+          "ስራ ክብር ነው",
+          "ስራ ስሩ",
+          "ስራ ህይወት ነው",
+          "ስራ ደስታ ነው",
+          "ስራ አስፈላጊ ነው",
+          "ስራ ወርቅ ነው",
+          "ስራ ሁሉ ነው",
+          "ስራ ውድ ነው"
+        ]
+      }
+    }
+  },
+  "performance_metrics": {
+    "average_score": 0.97,
+    "natural_rate": 0.6,
+    "authentic_rate": 1.0,
+    "perfectly_natural": 3,
+    "authentic_results": 5,
+    "total_tests": 5
+  },
+  "solution_status": "GOOD"
+}
