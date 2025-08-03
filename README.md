@@ -1,10 +1,369 @@
-# Amharic H-Net: Improved Transformer Model for Amharic Language
+# 🇪🇹 Amharic LLM Development Project
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-1.10+-red.svg)](https://pytorch.org/)
+A comprehensive implementation of a Large Language Model for Amharic text generation, following a local-first development approach with free cloud resources.
 
-## Project Overview
+## 🎯 Project Overview
+
+This project implements an Amharic Language Model using:
+- **Local Development**: Python virtual environment with Jupyter notebooks
+- **Training**: Kaggle notebooks with GPU acceleration
+- **Deployment**: Hugging Face Spaces for model serving
+- **Cost**: $0/month until production readiness
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+ installed
+- Git installed
+- Internet connection for package installation
+
+### 1. Clone and Setup
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd Amharic-Hnet-Qwin
+
+# 🔒 SECURE SETUP (Recommended)
+python secure_setup.py
+
+# OR Manual setup:
+cp .env.example .env
+nano .env  # Add your API credentials
+```
+
+### 2. Verify Setup
+
+```bash
+# Test environment configuration
+python amharic-hnet/test_env.py
+
+# Check system status
+python amharic-hnet/quick_start.py --status
+
+# Run evaluation (works offline)
+python amharic-hnet/quick_start.py --phase eval
+```
+
+### 3. API Credentials (For Full Features)
+
+**Kaggle API** (for data download):
+1. Go to [Kaggle Account Settings](https://www.kaggle.com/account)
+2. Generate new API token
+3. Add to your `.env` file
+
+**HuggingFace Token** (for model deployment):
+1. Go to [HuggingFace Settings](https://huggingface.co/settings/tokens)
+2. Create new token
+3. Add to your `.env` file
+
+## 📁 Project Structure
+
+```
+Amharic-Hnet-Qwin/
+├── 📄 IMPLEMENTATION_PLAN.md      # Detailed 14-week roadmap
+├── 📄 amharic-llm-review.md       # Original project analysis
+├── 📄 README.md                   # This file
+├── 📄 setup_environment.py        # Automated setup script
+├── 📄 quick_start.sh             # Quick start commands
+├── 🐍 amharic_data_collector.py   # Web scraping for Amharic content
+├── 📓 kaggle_amharic_trainer.ipynb # Kaggle training notebook
+├── 🌐 huggingface_spaces_app.py   # Gradio deployment app
+├── 📄 requirements_spaces.txt     # HF Spaces dependencies
+├── 📂 data/
+│   ├── 📂 raw/                    # Raw scraped data
+│   ├── 📂 processed/              # Cleaned and tokenized data
+│   └── 📂 collected/              # Final training datasets
+├── 📂 models/
+│   ├── 📂 checkpoints/            # Training checkpoints
+│   └── 📂 final/                  # Production-ready models
+├── 📂 notebooks/                  # Development notebooks
+├── 📂 scripts/                    # Utility scripts
+├── 📂 logs/                       # Training and evaluation logs
+└── 📂 venv/                       # Python virtual environment
+```
+
+## 🔄 Development Workflow
+
+### Phase 1: Data Collection (Week 1-2)
+
+```bash
+# 1. Collect Amharic web content
+python amharic_data_collector.py
+
+# 2. Review collected data
+ls -la data/collected/
+cat data/collected/amharic_texts_*.txt
+
+# 3. Upload to Kaggle dataset
+kaggle datasets create -p data/collected/
+```
+
+### Phase 2: Model Training (Week 3-6)
+
+```bash
+# 1. Upload notebook to Kaggle
+# Copy kaggle_amharic_trainer.ipynb to Kaggle
+
+# 2. Run training on Kaggle GPU
+# - Enable GPU in Kaggle notebook
+# - Run all cells
+# - Save model checkpoints
+
+# 3. Download trained model
+kaggle datasets download -d your-username/amharic-llm-model
+```
+
+### Phase 3: Deployment (Week 7-8)
+
+```bash
+# 1. Test locally
+python huggingface_spaces_app.py
+
+# 2. Create Hugging Face Space
+# - Upload huggingface_spaces_app.py
+# - Upload requirements_spaces.txt
+# - Upload trained model
+
+# 3. Deploy and test
+# Your model will be available at:
+# https://huggingface.co/spaces/your-username/amharic-llm
+```
+
+## 🛠️ Core Components
+
+### 1. Data Collector (`amharic_data_collector.py`)
+
+**Features:**
+- Web scraping for Amharic content
+- Text quality filtering (Amharic character ratio > 70%)
+- Automatic cleaning and preprocessing
+- JSON and plain text output formats
+- Statistics tracking
+
+**Usage:**
+```python
+from amharic_data_collector import AmharicDataCollector
+
+collector = AmharicDataCollector()
+collector.collect_from_urls([
+    "https://www.bbc.com/amharic",
+    "https://www.voa.com/amharic"
+])
+```
+
+### 2. Kaggle Trainer (`kaggle_amharic_trainer.ipynb`)
+
+**Features:**
+- GPT-2 based architecture for Amharic
+- Custom Amharic tokenizer
+- Mixed precision training
+- Gradient accumulation
+- Automatic checkpoint saving
+- Model evaluation and testing
+
+**Key Classes:**
+- `AmharicDataProcessor`: Data loading and preprocessing
+- `KaggleAmharicTrainer`: Training pipeline management
+
+### 3. Deployment App (`huggingface_spaces_app.py`)
+
+**Features:**
+- Gradio web interface
+- Real-time text generation
+- Amharic-specific examples
+- Model parameter controls
+- Responsive design
+
+## 📊 Performance Targets
+
+### Data Collection Goals
+- **Week 1**: 10K Amharic sentences
+- **Week 2**: 50K Amharic sentences
+- **Week 4**: 100K Amharic sentences
+- **Week 8**: 500K Amharic sentences
+
+### Model Performance Goals
+- **Baseline**: Perplexity < 50
+- **Target**: Perplexity < 30
+- **Production**: Perplexity < 20
+- **Inference**: < 2 seconds per generation
+
+### Quality Metrics
+- Amharic character accuracy > 95%
+- Grammar coherence score > 80%
+- Semantic relevance score > 75%
+
+## 🔧 Configuration
+
+### Environment Variables
+
+```bash
+# Optional: Set custom paths
+export AMHARIC_DATA_DIR="/path/to/data"
+export AMHARIC_MODEL_DIR="/path/to/models"
+export KAGGLE_CONFIG_DIR="~/.kaggle"
+```
+
+### Data Collector Settings
+
+```python
+# In amharic_data_collector.py
+class AmharicDataCollector:
+    def __init__(self):
+        self.min_amharic_ratio = 0.7    # 70% Amharic characters
+        self.min_text_length = 50       # Minimum text length
+        self.max_text_length = 5000     # Maximum text length
+        self.request_delay = 1.0        # Delay between requests
+```
+
+### Training Parameters
+
+```python
+# In kaggle_amharic_trainer.ipynb
+training_args = {
+    "learning_rate": 5e-5,
+    "batch_size": 8,
+    "gradient_accumulation_steps": 4,
+    "num_epochs": 3,
+    "warmup_steps": 500,
+    "save_steps": 1000
+}
+```
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+# Test data collector
+python -c "from amharic_data_collector import AmharicDataCollector; \
+collector = AmharicDataCollector(); \
+print('✅ Data collector working!' if collector.is_amharic_text('ሰላም ነው') else '❌ Failed')"
+
+# Test model loading
+python -c "from transformers import GPT2LMHeadModel; \
+model = GPT2LMHeadModel.from_pretrained('gpt2'); \
+print('✅ Model loading working!')"
+```
+
+### Integration Tests
+
+```bash
+# Test full pipeline
+python amharic_data_collector.py --test
+jupyter nbconvert --execute kaggle_amharic_trainer.ipynb
+python huggingface_spaces_app.py --test
+```
+
+## 📈 Monitoring
+
+### Training Metrics
+- Loss curves (training/validation)
+- Perplexity scores
+- Learning rate schedules
+- GPU utilization
+- Memory usage
+
+### Data Quality Metrics
+- Amharic character ratio distribution
+- Text length distribution
+- Vocabulary coverage
+- Duplicate detection
+
+### Deployment Metrics
+- Response time
+- Generation quality
+- User engagement
+- Error rates
+
+## 🚨 Troubleshooting
+
+### Common Issues
+
+**1. Virtual Environment Issues**
+```bash
+# Recreate virtual environment
+rm -rf venv
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+```
+
+**2. Kaggle API Issues**
+```bash
+# Check Kaggle configuration
+kaggle --version
+kaggle datasets list --user your-username
+```
+
+**3. Memory Issues During Training**
+```python
+# Reduce batch size in training config
+training_args["per_device_train_batch_size"] = 4
+training_args["gradient_accumulation_steps"] = 8
+```
+
+**4. Amharic Text Detection Issues**
+```python
+# Debug text detection
+from amharic_data_collector import AmharicDataCollector
+collector = AmharicDataCollector()
+collector.min_amharic_ratio = 0.5  # Lower threshold
+collector.min_text_length = 20     # Shorter minimum
+```
+
+### Getting Help
+
+1. Check the [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for detailed guidance
+2. Review Kaggle notebook outputs for training issues
+3. Test components individually using the test commands above
+4. Check Hugging Face Spaces logs for deployment issues
+
+## 🎯 Next Steps
+
+### Immediate Actions (This Week)
+1. ✅ Run `python setup_environment.py`
+2. ✅ Configure Kaggle API
+3. ⏳ Collect initial Amharic data
+4. ⏳ Test data collector with sample URLs
+
+### Week 1 Deliverables
+1. ⏳ 10K Amharic sentences collected
+2. ⏳ Kaggle training notebook uploaded
+3. ⏳ Initial model training started
+4. ⏳ Local Gradio interface tested
+
+### Week 2-4 Goals
+1. Scale data collection to 100K sentences
+2. Complete initial model training
+3. Deploy to Hugging Face Spaces
+4. Implement evaluation pipeline
+
+## 📚 Resources
+
+### Documentation
+- [Transformers Documentation](https://huggingface.co/docs/transformers)
+- [Kaggle API Documentation](https://github.com/Kaggle/kaggle-api)
+- [Gradio Documentation](https://gradio.app/docs/)
+- [Hugging Face Spaces](https://huggingface.co/docs/hub/spaces)
+
+### Amharic Language Resources
+- [Amharic Wikipedia](https://am.wikipedia.org/)
+- [BBC Amharic](https://www.bbc.com/amharic)
+- [VOA Amharic](https://amharic.voanews.com/)
+- [Ethiopian News Agency](https://www.ena.et/)
+
+### Technical References
+- [GPT-2 Paper](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+- [Tokenization Best Practices](https://huggingface.co/docs/tokenizers/)
+- [Mixed Precision Training](https://pytorch.org/docs/stable/amp.html)
+
+---
+
+**🇪🇹 Building the future of Amharic AI, one token at a time!**
+
+*For detailed implementation guidance, see [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)*
 
 This repository contains two main components:
 

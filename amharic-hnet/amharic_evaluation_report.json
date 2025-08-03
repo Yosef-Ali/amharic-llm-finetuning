@@ -1,0 +1,85 @@
+{
+  "evaluation_summary": {
+    "timestamp": "2025-08-03 19:03:46",
+    "model_path": null,
+    "evaluation_version": "1.0"
+  },
+  "metrics": {
+    "morphological_metrics": {
+      "verb_pattern_accuracy": 0.0,
+      "noun_pattern_accuracy": 0.0,
+      "possessive_pattern_accuracy": 0.0,
+      "overall_morphological_score": 0.0,
+      "pattern_distribution": {},
+      "morphological_errors": []
+    },
+    "script_metrics": {
+      "amharic_character_ratio": 1.0,
+      "script_purity_score": 1.0,
+      "mixed_script_instances": 0,
+      "character_distribution": {
+        "ት": 8,
+        "ኢ": 5,
+        "ና": 5,
+        "ው": 5,
+        "ዮ": 4,
+        "ጵ": 4,
+        "ያ": 4,
+        "በ": 4,
+        "አ": 4,
+        "የ": 4,
+        "ነ": 4,
+        "ን": 3,
+        "ገ": 3,
+        "ር": 3,
+        "ም": 2,
+        "ስ": 2,
+        "ባ": 2,
+        "ዋ": 2,
+        "ማ": 2,
+        "ጥ": 2
+      },
+      "script_errors": []
+    },
+    "cultural_metrics": {
+      "cultural_keyword_coverage": 0.2,
+      "cultural_context_score": 1.0,
+      "found_keywords": [
+        "ኢትዮጵያ",
+        "ኢንጀራ",
+        "ቡና",
+        "አማርኛ",
+        "አዲስ አበባ"
+      ],
+      "cultural_themes": {},
+      "relevance_distribution": [
+        2,
+        3,
+        2
+      ]
+    },
+    "performance_metrics": {
+      "text_quality_scores": [
+        89.16666666666667,
+        89.0,
+        75.0
+      ],
+      "average_text_length": 9.666666666666666,
+      "vocabulary_diversity": 0.8620689655172413,
+      "inference_speed": 0.0,
+      "memory_usage": 433.71875,
+      "perplexity_estimate": 0.0
+    },
+    "benchmark_results": {},
+    "comparative_analysis": {}
+  },
+  "recommendations": [
+    "Improve morphological accuracy through enhanced training data"
+  ],
+  "next_steps": [
+    "Address identified morphological inconsistencies",
+    "Improve cultural relevance through targeted training",
+    "Optimize model performance for production deployment",
+    "Conduct user studies for real-world validation"
+  ]
+}

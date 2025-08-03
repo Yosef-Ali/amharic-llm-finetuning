@@ -19,6 +19,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import logging
 
+# Import environment configuration
+from env_config import env_config, get_env, get_int_env, get_float_env, get_bool_env
+
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -273,17 +276,23 @@ class EnhancedHNet(nn.Module):
         return generated_text
 
 class EnhancedTrainer:
-    def __init__(self, model, tokenizer, device='cpu'):
+    def __init__(self, model, tokenizer, device='cpu', config=None):
         self.model = model
         self.tokenizer = tokenizer
         self.device = device
+        self.config = config or {}
         self.model.to(device)
         
         # Training components
         self.criterion = nn.CrossEntropyLoss(ignore_index=tokenizer.char_to_idx['<PAD>'])
-        self.optimizer = optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+        self.optimizer = optim.AdamW(
+            model.parameters(), 
+            lr=self.config.get('learning_rate', 1e-3), 
+            weight_decay=self.config.get('weight_decay', 1e-4)
+        )
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-            self.optimizer, mode='min', factor=0.5, patience=3
+            self.optimizer, mode='min', factor=0.5, 
+            patience=self.config.get('patience', 3)
         )
         
         # Training history
@@ -312,7 +321,10 @@ class EnhancedTrainer:
             loss.backward()
             
             # Gradient clipping
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
+            torch.nn.utils.clip_grad_norm_(
+                self.model.parameters(), 
+                max_norm=self.config.get('max_grad_norm', 1.0)
+            )
             
             # Update weights
             self.optimizer.step()
@@ -475,9 +487,31 @@ def main():
     """Main training function"""
     logger.info("Starting Enhanced H-Net Training with 1000-Article Corpus")
     
+    # Configuration with environment variable support
+    config = {
+        'max_vocab_size': get_int_env('MAX_VOCAB_SIZE', 5000),
+        'sequence_length': get_int_env('SEQUENCE_LENGTH', 128),
+        'embedding_dim': get_int_env('EMBEDDING_DIM', 256),
+        'hidden_dim': get_int_env('HIDDEN_DIM', 512),
+        'num_layers': get_int_env('NUM_LAYERS', 3),
+        'dropout': get_float_env('DROPOUT', 0.2),
+        'batch_size': get_int_env('BATCH_SIZE', 32),
+        'learning_rate': get_float_env('LEARNING_RATE', 1e-3),
+        'weight_decay': get_float_env('WEIGHT_DECAY', 1e-4),
+        'num_epochs': get_int_env('NUM_EPOCHS', 3),
+        'patience': get_int_env('PATIENCE', 5),
+        'max_grad_norm': get_float_env('MAX_GRAD_NORM', 1.0),
+        'save_path': get_env('SAVE_PATH', 'models/enhanced_hnet'),
+        'train_split': get_float_env('TRAIN_SPLIT', 0.8)
+    }
+    
     # Device setup
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f"Using device: {device}")
+    
+    # Adjust batch size based on device
+    if device.type == 'cpu':
+        config['batch_size'] = min(config['batch_size'], 16)
     
     # Load data
     texts = load_corpus_data()
@@ -488,7 +522,7 @@ def main():
     logger.info(f"Loaded {len(texts)} texts for training")
     
     # Initialize tokenizer
-    tokenizer = EnhancedAmharicTokenizer(max_vocab_size=5000)
+    tokenizer = EnhancedAmharicTokenizer(max_vocab_size=config['max_vocab_size'])
     tokenizer.build_vocab(texts)
     
     # Save tokenizer
@@ -496,40 +530,39 @@ def main():
     tokenizer.save("models/enhanced_tokenizer.pkl")
     
     # Create datasets
-    dataset = AmharicHNetDataset(texts, tokenizer, sequence_length=128)
+    dataset = AmharicHNetDataset(texts, tokenizer, sequence_length=config['sequence_length'])
     
     # Split dataset
-    train_size = int(0.8 * len(dataset))
+    train_size = int(config['train_split'] * len(dataset))
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
     
     # Create data loaders
-    batch_size = 32 if device.type == 'cuda' else 16
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=config['batch_size'], shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=config['batch_size'], shuffle=False)
     
     logger.info(f"Train samples: {len(train_dataset)}, Val samples: {len(val_dataset)}")
     
     # Initialize model
     model = EnhancedHNet(
         vocab_size=tokenizer.vocab_size,
-        embedding_dim=256,
-        hidden_dim=512,
-        num_layers=3,
-        dropout=0.2
+        embedding_dim=config['embedding_dim'],
+        hidden_dim=config['hidden_dim'],
+        num_layers=config['num_layers'],
+        dropout=config['dropout']
     )
     
     logger.info(f"Model initialized with {sum(p.numel() for p in model.parameters())} parameters")
     
     # Initialize trainer
-    trainer = EnhancedTrainer(model, tokenizer, device)
+    trainer = EnhancedTrainer(model, tokenizer, device, config)
     
     # Train model
     trainer.train(
         train_loader=train_loader,
         val_loader=val_loader,
-        epochs=3,
-        save_path="models/enhanced_hnet"
+        epochs=config['num_epochs'],
+        save_path=config['save_path']
     )
     
     # Final evaluation

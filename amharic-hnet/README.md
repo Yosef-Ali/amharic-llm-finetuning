@@ -30,6 +30,38 @@ The improved Amharic H-Net model builds upon the original implementation with th
    - Comprehensive evaluation metrics for Amharic text quality
    - Optimized deployment options
 
+## Quick Setup
+
+### 1. Environment Variables
+
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit the .env file with your credentials
+nano .env
+```
+
+### 2. Required Credentials
+
+Add the following to your `.env` file:
+
+```bash
+# Hugging Face Token (get from: https://huggingface.co/settings/tokens)
+HUGGINGFACE_TOKEN=your_token_here
+
+# Kaggle Credentials (get from: https://www.kaggle.com/account)
+KAGGLE_USERNAME=your_username
+KAGGLE_KEY=your_api_key
+```
+
+### 3. Test Configuration
+
+```bash
+# Test environment setup
+python test_env.py
+```
+
 ## Installation
 
 ```bash
@@ -40,6 +72,33 @@ cd amharic-hnet
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+## Environment Configuration
+
+The `env_config.py` module automatically searches for `.env` files in:
+
+1. Current directory (`./amharic-hnet/.env`)
+2. Parent directory (`./.env`)
+3. Home directory (`~/.env`)
+
+### Supported Environment Variables
+
+#### Credentials
+- `HUGGINGFACE_TOKEN` - Hugging Face API token
+- `KAGGLE_USERNAME` - Kaggle username
+- `KAGGLE_KEY` - Kaggle API key
+
+#### Training Parameters
+- `BATCH_SIZE` - Training batch size (default: 16)
+- `LEARNING_RATE` - Learning rate (default: 5e-5)
+- `NUM_EPOCHS` - Number of training epochs (default: 10)
+- `DEVICE` - Training device (default: auto-detect)
+
+#### Paths
+- `MODEL_DIR` - Model storage directory (default: `./models`)
+- `DATA_DIR` - Data storage directory (default: `./data`)
+- `RESULTS_DIR` - Results output directory (default: `../results`)
+- `LOG_DIR` - Log files directory (default: `./logs`)
 
 ## Usage
 
