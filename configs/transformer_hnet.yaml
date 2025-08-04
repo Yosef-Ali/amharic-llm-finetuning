@@ -1,0 +1,159 @@
+# Enhanced Transformer H-Net Configuration for Amharic
+# Advanced architecture with optimized hyperparameters
+
+model:
+  # Architecture Configuration
+  name: "TransformerHNet"
+  vocab_size: 3087  # Amharic tokenizer vocabulary size
+  hidden_dim: 512   # Increased from 256 for better capacity
+  num_layers: 8     # Increased depth for better representation
+  num_heads: 8      # Multi-head attention
+  dropout: 0.1
+  max_seq_len: 512
+  intermediate_size: 2048  # FFN intermediate dimension
+  layer_norm_eps: 1e-5
+  activation_function: "gelu"  # Better than ReLU for language models
+  
+  # Advanced Features
+  use_cache: true
+  use_hierarchical_attention: true
+  use_positional_bias: true
+  attention_window_size: 64  # Local attention window
+  
+  # Optimization Settings
+  gradient_checkpointing: true  # Memory efficiency
+  use_flash_attention: false    # Disabled for compatibility
+  
+  # Model Size Configurations (choose one)
+  # Small: 384 dim, 6 layers (~3M params)
+  # Medium: 512 dim, 8 layers (~6M params)  [DEFAULT]
+  # Large: 768 dim, 12 layers (~15M params)
+
+data:
+  # Training Data Paths
+  train_path: "data/training/train.jsonl"
+  val_path: "data/training/val.jsonl"
+  test_path: "data/training/test.jsonl"
+  
+  # Data Processing
+  max_length: 128
+  min_length: 10
+  batch_size: 16      # Adjusted for larger model
+  num_workers: 4
+  shuffle: true
+  
+  # Tokenization
+  tokenizer_type: "amharic"
+  vocab_path: "models/tokenizer/amharic_vocab.json"
+  
+  # Data Augmentation
+  use_augmentation: true
+  augmentation_prob: 0.15
+
+training:
+  # Training Configuration
+  num_epochs: 50
+  learning_rate: 1e-4      # Lower LR for stability
+  warmup_steps: 1000       # Warmup for better training
+  weight_decay: 0.01       # L2 regularization
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 1e-8
+  max_grad_norm: 1.0       # Gradient clipping
+  
+  # Learning Rate Schedule
+  scheduler: "cosine_with_warmup"  # Better than linear
+  min_learning_rate: 1e-6
+  
+  # Early Stopping
+  early_stopping: true
+  patience: 8              # Increased patience
+  min_delta: 0.001
+  
+  # Checkpointing
+  save_steps: 500
+  eval_steps: 250
+  logging_steps: 50
+  save_total_limit: 5
+  
+  # Mixed Precision Training
+  fp16: false              # Disabled for stability
+  gradient_accumulation_steps: 4
+
+generation:
+  # Generation Configuration
+  max_length: 100
+  min_length: 10
+  temperature: 1.0
+  top_k: 50
+  top_p: 0.9
+  repetition_penalty: 1.1
+  length_penalty: 1.0
+  num_beams: 1             # Beam search beams
+  num_return_sequences: 1
+  early_stopping: true
+  
+  # Advanced Generation
+  diversity_penalty: 0.0
+  temperature_decay: 0.95
+  adaptive_temperature: true
+
+evaluation:
+  # Evaluation Metrics
+  metrics: ["perplexity", "bleu", "rouge", "amharic_quality"]
+  eval_batch_size: 32
+  
+  # Quality Assessment
+  quality_threshold: 0.7
+  amharic_ratio_threshold: 0.95
+  fluency_threshold: 0.6
+  coherence_threshold: 0.7
+
+infrastructure:
+  # Hardware Configuration
+  device: "auto"  # auto-detect GPU/CPU
+  seed: 42
+  deterministic: true
+  
+  # Memory Management
+  dataloader_pin_memory: true
+  empty_cache_freq: 100    # Clear GPU cache frequency
+  
+  # Distributed Training (if multiple GPUs)
+  distributed: false
+  local_rank: -1
+
+paths:
+  # Model Paths
+  model_dir: "models/transformer_hnet"
+  checkpoint_dir: "outputs/transformer_hnet_training"
+  log_dir: "logs/transformer_hnet"
+  
+  # Output Paths
+  generated_samples_path: "outputs/generated_samples.json"
+  evaluation_results_path: "outputs/evaluation_results.json"
+  metrics_path: "outputs/training_metrics.json"
+
+logging:
+  # Logging Configuration
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_handler: true
+  console_handler: true
+  
+  # Experiment Tracking
+  use_wandb: false         # Weight & Biases integration
+  use_tensorboard: true    # TensorBoard logging
+  experiment_name: "amharic_transformer_hnet"
+
+# Performance Optimization
+optimization:
+  # Model Optimization
+  compile_model: false     # PyTorch 2.0 compile (experimental)
+  
+  # Inference Optimization
+  torch_dtype: "float32"  # float16 for faster inference (if supported)
+  
+  # Memory Optimization
+  low_cpu_mem_usage: true
+  torch_compile: false

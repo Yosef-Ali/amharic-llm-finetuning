@@ -1,0 +1,31 @@
+{
+  "system": {
+    "name": "Amharic Language AI",
+    "version": "1.0.0",
+    "environment": "production",
+    "deployment_timestamp": 1754348937.6869051
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "workers": 4,
+    "timeout": 120,
+    "max_requests": 10000
+  },
+  "processing": {
+    "max_batch_size": 50,
+    "max_workers": 8,
+    "cache_size": 1000,
+    "quality_threshold": 0.7
+  },
+  "storage": {
+    "results_path": "outputs/production",
+    "logs_path": "logs",
+    "backup_path": "backups"
+  },
+  "monitoring": {
+    "enable_metrics": true,
+    "log_level": "INFO",
+    "performance_tracking": true
+  }
+}

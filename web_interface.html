@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇪🇹 Amharic H-Net Text Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+        
+        .input-section, .output-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .section-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #495057;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .generate-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .generate-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .output-text {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 200px;
+            font-size: 18px;
+            line-height: 1.6;
+            direction: ltr;
+            text-align: left;
+            font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            margin-top: 10px;
+        }
+        
+        .examples {
+            margin-top: 20px;
+        }
+        
+        .example-prompts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .example-prompt {
+            background: #e9ecef;
+            padding: 8px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .example-prompt:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇪🇹 Amharic H-Net</h1>
+            <p>AI-Powered Amharic Text Generation</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-title">✏️ Generate Text</div>
+                
+                <form id="generateForm">
+                    <div class="form-group">
+                        <label for="prompt">Starting Prompt (Optional):</label>
+                        <textarea id="prompt" placeholder="ኢትዮጵያ የአፍሪካ ቀንድ..." dir="ltr"></textarea>
+                    </div>
+                    
+                    <div class="controls-grid">
+                        <div class="form-group">
+                            <label for="category">Category:</label>
+                            <select id="category">
+                                <option value="general">General</option>
+                                <option value="news">News</option>
+                                <option value="educational">Educational</option>
+                                <option value="cultural">Cultural</option>
+                                <option value="conversation">Conversation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="length">Length (words):</label>
+                            <input type="number" id="length" value="50" min="10" max="200">
+                        </div>
+                    </div>
+                    
+                    <div class="controls-grid">
+                        <div class="form-group">
+                            <label for="temperature">Temperature:</label>
+                            <input type="range" id="temperature" min="0.1" max="2.0" step="0.1" value="1.0">
+                            <div style="text-align: center; font-size: 14px; color: #6c757d;">
+                                <span id="temperatureValue">1.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topK">Top-K:</label>
+                            <input type="range" id="topK" min="1" max="100" step="1" value="50">
+                            <div style="text-align: center; font-size: 14px; color: #6c757d;">
+                                <span id="topKValue">50</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="generate-btn" id="generateBtn">
+                        🚀 Generate Amharic Text
+                    </button>
+                </form>
+                
+                <div class="examples">
+                    <label>Example Prompts:</label>
+                    <div class="example-prompts">
+                        <div class="example-prompt" onclick="setPrompt('ኢትዮጵያ')">ኢትዮጵያ</div>
+                        <div class="example-prompt" onclick="setPrompt('አዲስ አበባ')">አዲስ አበባ</div>
+                        <div class="example-prompt" onclick="setPrompt('ትምህርት')">ትምህርት</div>
+                        <div class="example-prompt" onclick="setPrompt('ባህል')">ባህል</div>
+                        <div class="example-prompt" onclick="setPrompt('ሰላም ወንድሜ')">ሰላም ወንድሜ</div>
+                        <div class="example-prompt" onclick="setPrompt('')">Empty (Random)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <div class="section-title">📄 Generated Text</div>
+                
+                <div id="outputArea" class="output-text">
+                    <div style="text-align: center; color: #6c757d; padding: 40px;">
+                        Click "Generate" to create Amharic text
+                    </div>
+                </div>
+                
+                <div class="stats" id="statsArea" style="display: none;">
+                    <div class="stat-card">
+                        <div class="stat-value" id="qualityScore">-</div>
+                        <div class="stat-label">Quality Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="wordCount">-</div>
+                        <div class="stat-label">Words</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="generationTime">-</div>
+                        <div class="stat-label">Time (s)</div>
+                    </div>
+                </div>
+                
+                <div id="errorArea"></div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Powered by Amharic H-Net Architecture | 6.85M Parameters | Trained on Amharic Text Corpus</p>
+            <p>API Status: <span id="apiStatus">Checking...</span></p>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8000';
+        
+        // UI Elements
+        const generateForm = document.getElementById('generateForm');
+        const generateBtn = document.getElementById('generateBtn');
+        const outputArea = document.getElementById('outputArea');
+        const statsArea = document.getElementById('statsArea');
+        const errorArea = document.getElementById('errorArea');
+        const apiStatus = document.getElementById('apiStatus');
+        
+        // Form elements
+        const promptInput = document.getElementById('prompt');
+        const categorySelect = document.getElementById('category');
+        const lengthInput = document.getElementById('length');
+        const temperatureInput = document.getElementById('temperature');
+        const topKInput = document.getElementById('topK');
+        
+        // Value displays
+        const temperatureValue = document.getElementById('temperatureValue');
+        const topKValue = document.getElementById('topKValue');
+        
+        // Stats elements
+        const qualityScore = document.getElementById('qualityScore');
+        const wordCount = document.getElementById('wordCount');
+        const generationTime = document.getElementById('generationTime');
+        
+        // Update slider values
+        temperatureInput.addEventListener('input', () => {
+            temperatureValue.textContent = temperatureInput.value;
+        });
+        
+        topKInput.addEventListener('input', () => {
+            topKValue.textContent = topKInput.value;
+        });
+        
+        // Set prompt from examples
+        function setPrompt(text) {
+            promptInput.value = text;
+        }
+        
+        // Check API health
+        async function checkApiHealth() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health`);
+                if (response.ok) {
+                    const data = await response.json();
+                    apiStatus.textContent = `🟢 Online (${data.requests_served} requests served)`;
+                    apiStatus.style.color = '#28a745';
+                } else {
+                    apiStatus.textContent = '🔴 API Error';
+                    apiStatus.style.color = '#dc3545';
+                }
+            } catch (error) {
+                apiStatus.textContent = '🔴 Offline';
+                apiStatus.style.color = '#dc3545';
+            }
+        }
+        
+        // Show loading state
+        function showLoading() {
+            generateBtn.disabled = true;
+            generateBtn.textContent = '⏳ Generating...';
+            outputArea.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Generating Amharic text...
+                </div>
+            `;
+            errorArea.innerHTML = '';
+            statsArea.style.display = 'none';
+        }
+        
+        // Show error
+        function showError(message) {
+            generateBtn.disabled = false;
+            generateBtn.textContent = '🚀 Generate Amharic Text';
+            errorArea.innerHTML = `<div class="error">❌ ${message}</div>`;
+        }
+        
+        // Show results
+        function showResults(data) {
+            generateBtn.disabled = false;
+            generateBtn.textContent = '🚀 Generate Amharic Text';
+            
+            // Display generated text
+            outputArea.innerHTML = `<div style="font-size: 18px; line-height: 1.8;">${data.text}</div>`;
+            
+            // Update stats
+            qualityScore.textContent = data.quality_score.toFixed(3);
+            wordCount.textContent = data.length;
+            generationTime.textContent = data.generation_time.toFixed(2);
+            
+            statsArea.style.display = 'grid';
+            errorArea.innerHTML = '';
+        }
+        
+        // Generate text
+        async function generateText(formData) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/generate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showResults(data);
+                } else if (response.status === 429) {
+                    showError('Rate limit exceeded. Please wait before trying again.');
+                } else {
+                    const errorData = await response.json();
+                    showError(errorData.detail || 'Generation failed');
+                }
+            } catch (error) {
+                showError('Network error. Please check if the API server is running.');
+            }
+        }
+        
+        // Form submission
+        generateForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                prompt: promptInput.value.trim(),
+                category: categorySelect.value,
+                length: parseInt(lengthInput.value),
+                temperature: parseFloat(temperatureInput.value),
+                top_k: parseInt(topKInput.value),
+                top_p: 0.9  // Fixed for now
+            };
+            
+            showLoading();
+            await generateText(formData);
+        });
+        
+        // Initialize
+        checkApiHealth();
+        setInterval(checkApiHealth, 30000); // Check every 30 seconds
+    </script>
+</body>
+</html>

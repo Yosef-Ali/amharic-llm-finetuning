@@ -178,6 +178,30 @@ TinyHNet = AmharicHNet
 
 def create_model(cfg) -> AmharicHNet:
     """Create H-Net model from config."""
+    # Check if we should use the new Transformer H-Net
+    model_name = getattr(cfg.model, 'name', 'AmharicHNet')
+    
+    if model_name == 'TransformerHNet':
+        # Import and create Transformer H-Net
+        try:
+            from .transformer_hnet import TransformerHNet, TransformerHNetConfig
+            
+            model_cfg = TransformerHNetConfig(
+                vocab_size=getattr(cfg.model, 'vocab_size', 3087),
+                hidden_dim=getattr(cfg.model, 'hidden_dim', 512),
+                num_layers=getattr(cfg.model, 'num_layers', 8),
+                num_heads=getattr(cfg.model, 'num_heads', 8),
+                dropout=getattr(cfg.model, 'dropout', 0.1),
+                max_seq_len=getattr(cfg.model, 'max_seq_len', 512),
+                intermediate_size=getattr(cfg.model, 'intermediate_size', 2048),
+                activation_function=getattr(cfg.model, 'activation_function', 'gelu'),
+                use_cache=getattr(cfg.model, 'use_cache', True)
+            )
+            return TransformerHNet(model_cfg)
+        except ImportError:
+            print("⚠️  TransformerHNet not available, using standard H-Net")
+    
+    # Default to standard H-Net
     model_cfg = HNetConfig(
         vocab_size=getattr(cfg.model, 'vocab_size', 32000),
         hidden_dim=getattr(cfg.model, 'hidden_dim', 256),
