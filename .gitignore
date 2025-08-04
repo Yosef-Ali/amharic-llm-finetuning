@@ -79,29 +79,29 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Project specific
-models/original/*
-models/improved/*
-models/optimized/*
-!models/original/.gitkeep
-!models/improved/.gitkeep
-!models/optimized/.gitkeep
-data/raw/*
+# Project specific - New organized structure
+# Data directories
+data/raw/collected_articles/*
 data/processed/*
-data/augmented/*
+data/training/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
-!data/augmented/.gitkeep
-results/evaluation/*
-results/comparison/*
-results/visualization/*
-!results/evaluation/.gitkeep
-!results/comparison/.gitkeep
-!results/visualization/.gitkeep
+!data/training/.gitkeep
 
-# Data collection folders (large datasets)
-collected_articles/
-processed_articles/
+# Model checkpoints and files
+models/*/
+!models/.gitkeep
+
+# Legacy archived files (optional - keep legacy work but not in repo)
+legacy/experiments/venv/
+legacy/experiments/amharic_env/
+legacy/experiments/node_modules/
+legacy/experiments/*.pt
+legacy/experiments/*.pth
+legacy/experiments/*.bin
+legacy/experiments/*.safetensors
+legacy/experiments/*.json
+legacy/experiments/*.log
 
 # Large model files
 *.pt
@@ -120,4 +120,11 @@ logs/
 node_modules/
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log*# Goose refactor additions
+outputs/
+logs/
+*.log
+__pycache__/
+*.pt
+*.ckpt
+.cache/

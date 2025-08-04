@@ -1,0 +1,21 @@
+data:
+  train_path: data/train.jsonl
+  val_path: data/val.jsonl
+  tokenizer: default
+  batch_size: 16
+  num_workers: 4
+
+model:
+  name: hnet-compact
+  hidden_dim: 512
+  num_layers: 12
+  checkpoint:
+
+train:
+  seed: 1337
+  epochs: 1
+  lr: 0.0005
+  weight_decay: 0.01
+  precision: fp16
+  device: auto
+  output_dir: outputs/run
