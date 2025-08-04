@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-08-04T04:47:45.725410",
+  "language_quality": {
+    "amharic_ratio": 0.7969513767833095,
+    "sentence_completeness": 0.6805555555555555,
+    "word_diversity": 0.9833333333333334
+  },
+  "conversational_coherence": {
+    "relevance_score": 0.25277777777777777,
+    "context_retention": 1.0,
+    "instruction_following": 0.7969513767833095
+  },
+  "cultural_appropriateness": {
+    "safety_score": 1.0,
+    "total_sensitive_terms": 0,
+    "respectful_handling_rate": 1.0
+  },
+  "overall_score": 0.6851423550583214,
+  "test_responses": [
+    "ሰላም! እንዴት ነዎት? ዛሬ ቆንጆ ቀን ነው።",
+    "እኔ የአማርኛ ቋንቋ ረዳት ነኝ። ልረዳዎት እችላለሁ።",
+    "ኢትዮጵያ በአፍሪካ ቀንድ የምትገኝ ታሪካዊ ሀገር ናት። ብዙ ባህላዊ ሀብት አላት።",
+    "ቡና የኢትዮጵያ ባህላዊ መጠጥ ነው። በቤተሰብ መካከል የመተሳሰብ ምልክት ነው።",
+    "የአማርኛ ቋንቋ ረጅም ታሪክ አለው። በግዕዝ ፊደል ይጻፋል።",
+    "ኢንጀራ ከተፍ የሚሰራ ባህላዊ ምግብ ነው። በኢትዮጵያ በየቀኑ ይበላል።"
+  ],
+  "detailed_scores": {
+    "language_scores": [
+      {
+        "amharic_ratio": 0.7142857142857143,
+        "sentence_completeness": 0.75,
+        "word_diversity": 1.0
+      },
+      {
+        "amharic_ratio": 0.8181818181818182,
+        "sentence_completeness": 0.6666666666666666,
+        "word_diversity": 1.0
+      },
+      {
+        "amharic_ratio": 0.803921568627451,
+        "sentence_completeness": 0.6666666666666666,
+        "word_diversity": 1.0
+      },
+      {
+        "amharic_ratio": 0.8163265306122449,
+        "sentence_completeness": 0.6666666666666666,
+        "word_diversity": 0.9
+      },
+      {
+        "amharic_ratio": 0.8108108108108109,
+        "sentence_completeness": 0.6666666666666666,
+        "word_diversity": 1.0
+      },
+      {
+        "amharic_ratio": 0.8181818181818182,
+        "sentence_completeness": 0.6666666666666666,
+        "word_diversity": 1.0
+      }
+    ],
+    "cultural_scores": [
+      {
+        "safety_score": 1.0,
+        "sensitive_terms_found": [],
+        "respectful_handling": true
+      },
+      {
+        "safety_score": 1.0,
+        "sensitive_terms_found": [],
+        "respectful_handling": true
+      },
+      {
+        "safety_score": 1.0,
+        "sensitive_terms_found": [],
+        "respectful_handling": true
+      },
+      {
+        "safety_score": 1.0,
+        "sensitive_terms_found": [],
+        "respectful_handling": true
+      },
+      {
+        "safety_score": 1.0,
+        "sensitive_terms_found": [],
+        "respectful_handling": true
+      },
+      {
+        "safety_score": 1.0,
+        "sensitive_terms_found": [],
+        "respectful_handling": true
+      }
+    ]
+  }
+}

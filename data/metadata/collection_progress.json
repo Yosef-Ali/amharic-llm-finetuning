@@ -1,0 +1,10 @@
+{
+  "total_articles": 4,
+  "successful_collections": 4,
+  "failed_collections": 96,
+  "total_words": 266,
+  "sources_used": [
+    "wikipedia"
+  ],
+  "last_updated": 1754271953.159799
+}

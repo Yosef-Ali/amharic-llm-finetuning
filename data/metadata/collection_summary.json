@@ -1,0 +1,22 @@
+{
+  "collection_stats": {
+    "total_articles": 4,
+    "successful_collections": 4,
+    "failed_collections": 96,
+    "total_words": 266,
+    "sources_used": [
+      "wikipedia"
+    ],
+    "last_updated": 1754271953.159799
+  },
+  "data_quality": {
+    "avg_article_length": 66.5,
+    "success_rate": 0.04
+  },
+  "next_steps": [
+    "Run data preprocessing pipeline",
+    "Validate data quality",
+    "Upload to Kaggle dataset",
+    "Begin model training"
+  ]
+}
