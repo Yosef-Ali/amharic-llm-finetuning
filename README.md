@@ -131,10 +131,16 @@ train:
 
 ## 📚 Documentation
 
-Comprehensive documentation available in `docs/`:
-- `docs/README.md`: Detailed project documentation
+### 🎯 **Start Here (Post-Refactor)**
+- **[Clean Architecture Setup](docs/CLEAN_ARCHITECTURE_SETUP.md)**: Quick setup for the `src/amharichnet/` implementation
+- **[Refactor Workflow Guide](docs/REFACTOR_WORKFLOW_GUIDE.md)**: Complete step-by-step workflow (train, resume, test, extend)
+
+### 📖 **Comprehensive Documentation**
+- `docs/README.md`: Detailed project documentation  
 - `docs/IMPLEMENTATION_GUIDE.md`: Implementation details
 - `docs/PROJECT_STRUCTURE.md`: Architecture overview
+- `docs/ENVIRONMENT_SETUP.md`: Environment configuration
+- And 10+ other guides for comprehensive coverage
 
 ## 🚀 Next Steps
 

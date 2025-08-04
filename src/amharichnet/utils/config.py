@@ -10,8 +10,12 @@ class DataConfig(BaseModel):
 
 class ModelConfig(BaseModel):
     name: str = "hnet-compact"
+    vocab_size: int = 32000
     hidden_dim: int = 512
     num_layers: int = 12
+    num_heads: int = 8
+    dropout: float = 0.1
+    max_seq_len: int = 512
     checkpoint: Optional[str] = None
 
 class TrainConfig(BaseModel):

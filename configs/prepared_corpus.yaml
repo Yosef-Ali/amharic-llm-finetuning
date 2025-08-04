@@ -1,0 +1,27 @@
+# Updated config for your prepared corpus data
+data:
+  train_path: "data/training/train.jsonl"
+  val_path: "data/training/val.jsonl"
+  test_path: "data/training/test.jsonl"
+  batch_size: 16
+  num_workers: 4
+  max_length: 256
+
+model:
+  name: "AmharicHNet"
+  hidden_dim: 512
+  num_layers: 8
+  checkpoint: null
+
+train:
+  seed: 1337
+  epochs: 15
+  lr: 0.0003
+  output_dir: "outputs/corpus_training"
+
+# Dataset statistics
+dataset_stats:
+  total_samples: 9019
+  train_samples: 7215
+  val_samples: 902
+  test_samples: 902

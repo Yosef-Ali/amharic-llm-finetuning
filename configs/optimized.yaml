@@ -1,0 +1,46 @@
+# Optimized training configuration for real H-Net Amharic model
+# Based on analysis of training logs showing high loss plateau
+
+data:
+  train_path: "data/training/train.jsonl"
+  val_path: "data/training/val.jsonl"
+  batch_size: 8                    # Smaller batch for stability
+  num_workers: 2                   # Reduce if memory issues
+  max_length: 128                  # Shorter sequences initially
+
+model:
+  name: "AmharicHNet"
+  vocab_size: 8000                 # Smaller vocab for better learning
+  hidden_dim: 256                  # Smaller model to start
+  num_layers: 4                    # Fewer layers for faster training
+  num_heads: 8                     # Balanced attention heads
+  dropout: 0.2                     # Higher dropout for regularization
+  max_seq_len: 128
+  checkpoint: null
+
+train:
+  seed: 1337
+  epochs: 200                      # More epochs with better hyperparams
+  lr: 0.00005                      # Much lower learning rate (was 0.0001)
+  weight_decay: 0.1                # Higher weight decay
+  precision: "fp16"
+  device: "auto"
+  output_dir: "outputs/optimized_training"
+  
+  # Advanced training settings
+  gradient_accumulation_steps: 8   # Effective batch size: 64
+  warmup_steps: 500               # Gradual warmup
+  save_every: 1000                # Save checkpoints
+  eval_every: 500                 # Frequent evaluation
+
+# Optimization settings
+optimizer:
+  type: "AdamW"
+  betas: [0.9, 0.95]
+  eps: 1e-8
+
+# Learning rate schedule
+scheduler:
+  type: "cosine"
+  warmup_steps: 500
+  max_steps: 10000

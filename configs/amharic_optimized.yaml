@@ -1,0 +1,43 @@
+# Optimized training config with learning rate scheduling and early stopping
+data:
+  train_path: "data/training/train.jsonl"
+  val_path: "data/training/val.jsonl"
+  tokenizer: "amharic"               # Use Amharic tokenizer
+  tokenizer_path: "models/tokenizer/amharic_vocab.json"
+  batch_size: 16                    # Increased batch size for stability
+  num_workers: 2
+  max_length: 128
+
+model:
+  name: "AmharicHNet"
+  vocab_size: 3087                  # Actual vocab size from tokenizer
+  hidden_dim: 256
+  num_layers: 4
+  num_heads: 8
+  dropout: 0.15                     # Increased dropout for regularization
+  max_seq_len: 128
+  checkpoint: null
+
+train:
+  seed: 1337
+  epochs: 200                       # More epochs with early stopping
+  lr: 0.0003                        # Slightly higher initial learning rate
+  weight_decay: 0.02                # Increased weight decay
+  precision: "fp16"
+  device: "auto"
+  output_dir: "outputs/amharic_optimized_training"
+
+# Training optimization settings
+optimization:
+  scheduler: "cosine_annealing"     # Learning rate scheduling
+  early_stopping_patience: 15      # Stop if val loss doesn't improve
+  warmup_steps: 10                  # Learning rate warmup
+  gradient_clipping: 1.0            # Gradient clipping for stability
+
+# Tokenizer info
+tokenizer_stats:
+  vocab_size: 3087
+  trained_on_texts: 17197
+  special_tokens: 5
+  syllable_aware: true
+  morphology_based: true

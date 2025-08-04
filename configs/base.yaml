@@ -1,6 +1,6 @@
 data:
-  train_path: data/train.jsonl
-  val_path: data/val.jsonl
+  train_path: data/processed/train_data.jsonl
+  val_path: data/processed/val_data.jsonl
   tokenizer: default
   batch_size: 16
   num_workers: 4

@@ -1,0 +1,49 @@
+# Configuration for training with the real 30k+ Amharic corpus
+# This uses your actual collected and processed data
+
+data:
+  # Use your processed corpus (3,848 paragraphs, 92k+ words)
+  train_path: "data/processed/processed_articles/amharic_sentences.txt"  # 9,018 sentences
+  val_path: "data/processed/processed_articles/amharic_corpus.txt"      # 3,848 paragraphs  
+  tokenizer: "amharic_char"  # Character-level for Amharic
+  batch_size: 16             # Larger batch for rich data
+  num_workers: 4
+  max_length: 256            # Longer sequences for Amharic text
+
+model:
+  name: "AmharicHNet"
+  hidden_dim: 512            # Larger model for substantial dataset
+  num_layers: 8              # More layers for better language modeling
+  vocab_size: 300            # Amharic character vocabulary size
+  dropout: 0.1
+  checkpoint: null           # Set for resume
+
+train:
+  seed: 1337
+  epochs: 20                 # More epochs for your rich dataset
+  lr: 0.0003                 # Lower learning rate for stable training
+  weight_decay: 0.01
+  precision: "fp16"          # Mixed precision for efficiency
+  device: "auto"
+  output_dir: "outputs/real_data_run"
+  
+  # Advanced training settings for real data
+  gradient_accumulation_steps: 4
+  warmup_steps: 1000         # Gradual learning rate warmup
+  save_every: 500            # Save checkpoint every 500 steps
+  eval_every: 1000           # Evaluate every 1000 steps
+
+# Logging and monitoring
+logging:
+  log_level: "INFO"
+  log_steps: 100             # Log progress every 100 steps
+  save_logs: true
+
+# Data statistics (for reference)
+dataset_info:
+  total_sentences: 9018
+  total_paragraphs: 3848  
+  total_words: 92926
+  source: "collected_articles + processed_articles"
+  languages: ["amharic"]
+  preprocessing: "completed"
