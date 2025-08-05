@@ -1,37 +1,118 @@
 #!/usr/bin/env python3
-"""REST API server for Amharic H-Net text generation."""
+"""Enhanced REST API server for Amharic H-Net text generation."""
 
 import sys
+import os
 from pathlib import Path
 import json
 import time
+import logging
 from typing import Dict, List, Optional
 from datetime import datetime, timedelta
 from collections import defaultdict
 import asyncio
+from contextlib import asynccontextmanager
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Request
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Request, Security
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.responses import JSONResponse, HTMLResponse
-from pydantic import BaseModel, Field
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from pydantic import BaseModel, Field, validator
 import uvicorn
+from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
+import structlog
 
-from generate import AmharicGenerator
-from amharichnet.evaluation import AmharicTextEvaluator
+try:
+    from generate import AmharicGenerator
+    from amharichnet.evaluation import AmharicTextEvaluator
+except ImportError as e:
+    print(f"Warning: Could not import modules: {e}")
+    AmharicGenerator = None
+    AmharicTextEvaluator = None
 
+
+# Configure structured logging
+structlog.configure(
+    processors=[
+        structlog.stdlib.filter_by_level,
+        structlog.stdlib.add_logger_name,
+        structlog.stdlib.add_log_level,
+        structlog.stdlib.PositionalArgumentsFormatter(),
+        structlog.processors.TimeStamper(fmt="iso"),
+        structlog.processors.StackInfoRenderer(),
+        structlog.processors.format_exc_info,
+        structlog.processors.UnicodeDecoder(),
+        structlog.processors.JSONRenderer()
+    ],
+    context_class=dict,
+    logger_factory=structlog.stdlib.LoggerFactory(),
+    wrapper_class=structlog.stdlib.BoundLogger,
+    cache_logger_on_first_use=True,
+)
+
+logger = structlog.get_logger()
+
+# Prometheus metrics (with duplicate prevention)
+try:
+    REQUEST_COUNT = Counter('amharic_requests_total', 'Total requests', ['method', 'endpoint', 'status'])
+    REQUEST_DURATION = Histogram('amharic_request_duration_seconds', 'Request duration')
+    GENERATION_COUNT = Counter('amharic_generations_total', 'Total text generations', ['category'])
+    GENERATION_DURATION = Histogram('amharic_generation_duration_seconds', 'Generation duration')
+    ERROR_COUNT = Counter('amharic_errors_total', 'Total errors', ['error_type'])
+except ValueError:
+    # Metrics already registered, get existing ones
+    from prometheus_client import REGISTRY
+    REQUEST_COUNT = None
+    REQUEST_DURATION = None
+    GENERATION_COUNT = None
+    GENERATION_DURATION = None
+    ERROR_COUNT = None
+    for collector in list(REGISTRY._collector_to_names.keys()):
+        if hasattr(collector, '_name'):
+            if collector._name == 'amharic_requests_total':
+                REQUEST_COUNT = collector
+            elif collector._name == 'amharic_request_duration_seconds':
+                REQUEST_DURATION = collector
+            elif collector._name == 'amharic_generations_total':
+                GENERATION_COUNT = collector
+            elif collector._name == 'amharic_generation_duration_seconds':
+                GENERATION_DURATION = collector
+            elif collector._name == 'amharic_errors_total':
+                ERROR_COUNT = collector
+
+# Security
+security = HTTPBearer(auto_error=False)
 
 # API Models
 class GenerationRequest(BaseModel):
-    prompt: str = Field(default="", description="Starting text prompt")
+    prompt: str = Field(default="", max_length=500, description="Starting text prompt")
     category: str = Field(default="general", description="Text category (general, news, educational, cultural, conversation)")
     length: int = Field(default=50, ge=10, le=200, description="Generated text length")
     temperature: float = Field(default=1.0, ge=0.1, le=2.0, description="Generation temperature")
     top_k: int = Field(default=50, ge=1, le=100, description="Top-k sampling")
     top_p: float = Field(default=0.9, ge=0.1, le=1.0, description="Top-p (nucleus) sampling")
     max_time: int = Field(default=30, ge=5, le=120, description="Maximum generation time in seconds")
+    
+    @validator('category')
+    def validate_category(cls, v):
+        allowed_categories = ['general', 'news', 'educational', 'cultural', 'conversation']
+        if v not in allowed_categories:
+            raise ValueError(f'Category must be one of: {allowed_categories}')
+        return v
+    
+    @validator('prompt')
+    def validate_prompt(cls, v):
+        # Basic security: prevent potential injection attempts
+        dangerous_patterns = ['<script', 'javascript:', 'eval(', 'exec(']
+        v_lower = v.lower()
+        for pattern in dangerous_patterns:
+            if pattern in v_lower:
+                raise ValueError('Invalid characters in prompt')
+        return v
 
 
 class GenerationResponse(BaseModel):
